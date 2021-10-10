@@ -14,7 +14,7 @@
   * [Code readability](#code-readability)
   * [Building and playtesting](#building-and-playtesting)
 * [C# and Unity Features](#csharp-and-unity-features)
-  * Coroutines
+  * [Coroutines](#coroutines)
   * ```static``` Keyword
   * PlayerPrefs
   * Properties
@@ -57,6 +57,25 @@ Quality assurance is one part of game development that is often neglected until 
 ---
 ## CSharp and Unity Features
 For this section, you can follow along and code in the Programming Essentials Unity project this README is located within. We will be demonstrating the use of various C# and Unity engine features by coding scripts for a typewriter effect, settings to store the text delay between displaying characters for the typewriter effect, and a slider to change the text delay.
+
+When you open the project, you should see that the ```SampleScene``` has a ```Canvas``` with ```Text(TMP)``` as a child. ```Text(TMP)``` should have a ```TextMeshPro - Text``` component and a ```Typewriter``` script component attached. If you play the scene, you should see that the text prints out a message one character at a time. Okay, we're done here, this tutorial is finished!
+
+Just kidding! Let's open up the ```Typewriter``` script (located in ```Assets/Scripts```). Take a moment to read through it and understand how it implements the typewriter effect. What issues does this implementation have?
+
+<details>
+ <summary>Implementation Issues</summary>
+ <ul>
+  <li>The typewriter effect always starts at the start of the scene, and it's not simple to add a delay before it starts either.</li>
+  <li>The typewriter effect only runs once. If we wanted to reset the typewriter, we would need to change quite a few variables.</li>
+  <li>The typewriter only displays the same line, although we could add code to change the exampleLine.</li>
+  <li>The typewriter continues to make an if check every Update(), even after it's done printing out, slowing down the game.</li>
+  <li>The code is poorly encapsulated - fixing any of these issues requires understanding the implementation and/or making a large number of changes.</li>
+ </ul>
+</details>
+
+Clearly there's a lot of room for improvement! To make these improvements, we are going to turn to Coroutines.
+
+### Coroutines
 
 ---
 ## Essential Links
