@@ -13,7 +13,7 @@
   * [Encapsulation / Information Hiding](#encapsulation-and-information-hiding)
   * [Code readability](#code-readability)
   * [Building and playtesting](#building-and-playtesting)
-* [C# and Unity Features](#csharp-and-unity-features)
+* [C# and Unity Features](#c-and-unity-features)
   * [Coroutines](#coroutines)
   * ```static``` Keyword
   * PlayerPrefs
