@@ -9,8 +9,8 @@
 [Video]()<br>
 
 ## Topics Covered
-* Best Practices
-  * Encapsulation / Information Hiding
+* [Best Practices](#best-practices)
+  * [Encapsulation / Information Hiding](#encapsulation-and-information-hiding)
   * Code readability
   * Building and playtesting
 * C# and Unity Features
