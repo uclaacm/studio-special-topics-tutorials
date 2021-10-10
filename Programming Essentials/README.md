@@ -1,4 +1,4 @@
-# Studio Beginner Tutorials - Roll a Ball Part 1
+# Studio Advanced Tutorials - Game Programming Essentials
 
 **Date**: October 13, 2021<br>
 **Location**: ACM Clubhouse (Boelter 2763)<br>
