@@ -101,6 +101,13 @@ public void StartStopExample()
 }
 ```
 
+Rewrite ```Typewriter.cs``` to use a coroutine instead, and add a wrapper function so that we can start the coroutine again whenever we want to. Finally, create a button in the scene and add your wrapper function to the ```onClick``` so that the button will restart your typewriter effect whenever you press it! An example solution can be found in ```Assets/Scripts/Solutions/CoroutineTypewriter.cs``` if you are stuck or confused. Look how much simpler, easier to understand, and better encapsulated your new typewriter script is! There's just one problem (unless you already accounted for it, in which case good job!) - do you notice it?
+
+<details>
+ <summary>One Small Issue</summary>
+ Play the scene and press the button repeatedly. Notice how the text is messed up? That's because we started more coroutines that are editing the text, without stopping the ones that came before! The coroutines are competing with each other to edit the text. To fix this, add a StopCoroutine() call to your wrapper function. (I hope you see why wrapper functions are great for encapsulation!)
+</details>
+
 ---
 ## Essential Links
 - [Studio Discord](https://discord.com/invite/bBk2Mcw)
