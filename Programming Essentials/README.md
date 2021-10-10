@@ -55,7 +55,7 @@ Quality assurance is one part of game development that is often neglected until 
   * Making regular builds provides a tangible progress check, and ensures you will definitely have _something_ to present.
   * If you've been building throughout development, chances are you won't run into any last-minute issues with building your game when it's done.
 ---
-## CSharp and Unity Features
+## C# and Unity Features
 For this section, you can follow along and code in the Programming Essentials Unity project this README is located within. We will be demonstrating the use of various C# and Unity engine features by coding scripts for a typewriter effect, settings to store the text delay between displaying characters for the typewriter effect, and a slider to change the text delay.
 
 When you open the project, you should see that the ```SampleScene``` has a ```Canvas``` with ```Text(TMP)``` as a child. ```Text(TMP)``` should have a ```TextMeshPro - Text``` component and a ```Typewriter``` script component attached. If you play the scene, you should see that the text prints out a message one character at a time. Okay, we're done here, this tutorial is finished!
