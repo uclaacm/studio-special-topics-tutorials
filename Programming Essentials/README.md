@@ -15,7 +15,7 @@
   * [Building and playtesting](#building-and-playtesting)
 * [C# and Unity Features](#c-and-unity-features)
   * [Coroutines](#coroutines)
-  * ```static``` Keyword
+  * [```static``` Keyword](#static-keyword)
   * PlayerPrefs
   * Properties
   * Events
@@ -107,6 +107,8 @@ Rewrite ```Typewriter.cs``` to use a coroutine instead, and add a wrapper functi
  <summary>One Small Issue</summary>
  Play the scene and press the button repeatedly. Notice how the text is messed up? That's because we started more coroutines that are editing the text, without stopping the ones that came before! The coroutines are competing with each other to edit the text. To fix this, add a StopCoroutine() call to your wrapper function. (I hope you see why wrapper functions are great for encapsulation!)
 </details>
+
+### ```static``` Keyword
 
 ---
 ## Essential Links
