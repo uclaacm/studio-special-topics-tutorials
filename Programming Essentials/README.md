@@ -12,7 +12,7 @@
 * [Best Practices](#best-practices)
   * [Encapsulation / Information Hiding](#encapsulation-and-information-hiding)
   * [Code readability](#code-readability)
-  * Building and playtesting
+  * [Building and playtesting](#building-and-playtesting)
 * C# and Unity Features
   * Coroutines
   * ```static``` Keyword
@@ -41,6 +41,19 @@ Making your code easy to read and understand is important, especially when you a
 * **Adopt a common code style.** Sharing the same code style as the people you are working with makes it much easier to read each others' code. In particular, having consistent indentation and a consistent naming scheme can save time and prevent confusion.
 * **Use informative names.** Being able to intuit the meaning of a variable or function name saves time from having to closely read the code to understand what is going on.
 * **Write useful comments.** Comments futher improve readability by providing explanations to what the code is doing. That being said, more comments is not always better - don't drown useful information in a deluge of trivial comments. And don't forget to update your comments when you make changes to the code!
+
+### Building and Playtesting
+Quality assurance is one part of game development that is often neglected until the end, even though it should be integrated as part of your continuous development cycle. Leaving your playtesting until the end results in issues like having to rewrite major sections of code to fix bugs, or discovering that your render pipeline doesn't support WebGL and you don't have time to fix it. Here are some tips for building and playtesting:
+* **Playtest continuously**. Playtesting your game throughout development helps catch nasty bugs before they require significant work to fix. 
+* **Make it easy to playtest**.
+  * Include "debug" keys that allow you to skip sections of gameplay or test certain mechanics. You don't want to have to platform the same section over and over again in order to test the section after it, nor do you want to move your character to that later section and then forget to move it back afterwards. You can use ```#if``` directives to make sure that these debug keys only work in the editor and development builds, and not in your final build.
+  * Have each scene be playable by itself (most applicable if you have ```DoNotDestroyOnLoad()``` objects). Being able to start playing from any scene allows you to skip to the section you actually want to test.
+  * Have each scene by playable in sequence. Some bugs (```DoNotDestroyOnLoad()```) only manifest if you play scenes consecutively.
+* **Build early and often**.
+  * Although the majority of your playtesting can be done in the Unity editor, you also want to actually build your game since some code can behave differently in the editor and on different platforms.
+  * Building your game and running it on different computers is also a good chance to see how your UI scales and appears on different screen resolutions.
+  * Making regular builds provides a tangible progress check, and ensures you will definitely have _something_ to present.
+  * If you've been building throughout development, chances are you won't run into any last-minute issues with building your game when it's done.
 
 ---
 ## Essential Links
