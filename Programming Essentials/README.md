@@ -13,7 +13,7 @@
   * [Encapsulation / Information Hiding](#encapsulation-and-information-hiding)
   * [Code readability](#code-readability)
   * [Building and playtesting](#building-and-playtesting)
-* C# and Unity Features
+* [C# and Unity Features](#csharp-and-unity-features)
   * Coroutines
   * ```static``` Keyword
   * PlayerPrefs
@@ -54,8 +54,9 @@ Quality assurance is one part of game development that is often neglected until 
   * Building your game and running it on different computers is also a good chance to see how your UI scales and appears on different screen resolutions.
   * Making regular builds provides a tangible progress check, and ensures you will definitely have _something_ to present.
   * If you've been building throughout development, chances are you won't run into any last-minute issues with building your game when it's done.
-
-## C# and Unity Features
+---
+## CSharp and Unity Features
+For this section, you can follow along and code in the Programming Essentials Unity project this README is located within. We will be demonstrating the use of various C# and Unity engine features by coding scripts for a typewriter effect, settings to store the text delay between displaying characters for the typewriter effect, and a slider to change the text delay.
 
 ---
 ## Essential Links
