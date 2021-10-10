@@ -76,6 +76,20 @@ Just kidding! Let's open up the ```Typewriter``` script (located in ```Assets/Sc
 Clearly there's a lot of room for improvement! To make these improvements, we are going to turn to Coroutines.
 
 ### Coroutines
+Coroutines are feature provided by the Unity engine that allow you to pause execution of a function, thus returning control to Unity, and then resume execution of that function at a later point. For our typewriter effect, for example, we can write a coroutine that adds one character to the text, pauses itself for the duration of the delay while other things happen in-game, and repeats until the entire line has been displayed.
+
+To write a coroutine, write a function that returns an ```IEnumerator```. You don't need to know what an ```IEnumerator``` is to use coroutines, but you can read about them in the [C# documentation](https://docs.microsoft.com/en-us/dotnet/api/system.collections.ienumerator). Inside this function, when you want to pause, you can use ```yield return x``` where ```x``` on of Unity's yield instructions. Yield instructions include ```yield return null```, which waits until the next frame, ```yield return new WaitForSeconds(float time)``` which waits for approximately some number of seconds, or even another coroutine! You can find more yield instructions in the [Unity documentation](https://docs.unity3d.com/ScriptReference/YieldInstruction.html), or code your own [CustomYieldInstruction](https://docs.unity3d.com/ScriptReference/CustomYieldInstruction.html). If you want to end a coroutine before it reaches the end of the function, you can also use ```yield break```. The code below shows an example of a coroutine, which logs "Hello World!" every second for ```times``` seconds.
+
+```c#
+public IEnumerator ExampleCoroutine(int times)
+{
+  for (int i = 0; i < times; i++)
+  {
+    Debug.Log("Hello World!");
+    yield return new WaitForSeconds(1);
+  }
+}
+```
 
 ---
 ## Essential Links
