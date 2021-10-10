@@ -4,6 +4,9 @@ using UnityEngine;
 
 using UnityEngine.UI;	// Used for Slider
 
+[RequireComponent(typeof(Slider))]
+[DisallowMultipleComponent]
+
 public class FinalTextDelaySlider : MonoBehaviour
 {
 

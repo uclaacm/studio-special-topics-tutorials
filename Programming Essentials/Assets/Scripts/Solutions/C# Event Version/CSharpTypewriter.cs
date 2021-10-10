@@ -5,6 +5,8 @@ using UnityEngine;
 using System.Text;	// Used for StringBuilder
 using TMPro;		// Used for TextMeshPro
 
+[RequireComponent(typeof(TextMeshProUGUI))]
+
 public class CSharpTypewriter : MonoBehaviour
 {
 
