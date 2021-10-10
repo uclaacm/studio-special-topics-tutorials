@@ -55,6 +55,8 @@ Quality assurance is one part of game development that is often neglected until 
   * Making regular builds provides a tangible progress check, and ensures you will definitely have _something_ to present.
   * If you've been building throughout development, chances are you won't run into any last-minute issues with building your game when it's done.
 
+## C# and Unity Features
+
 ---
 ## Essential Links
 - [Studio Discord](https://discord.com/invite/bBk2Mcw)
