@@ -1,6 +1,6 @@
 # Studio Beginner Tutorials - Roll a Ball Part 1
 
-**Date**: October 12, 2021<br>
+**Date**: October 13, 2021<br>
 **Location**: ACM Clubhouse (Boelter 2763)<br>
 **Instructor**: Richard Cheng
 
