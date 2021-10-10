@@ -109,6 +109,19 @@ Rewrite ```Typewriter.cs``` to use a coroutine instead, and add a wrapper functi
 </details>
 
 ### ```static``` Keyword
+Our typewriter script is looking good so far, but what if we want to change the delay between characters appearing at runtime? In fact, what if we want to change the delay for **all** of our typewriter scripts at once, and have it persist between scenes or event game sessions? In other words, we want to have Text Delay setting that the player can change.
+
+We can use ```static``` to solve most of these problems. (Note: For those of you who have programmed in ```C``` and ```C++```, note that in ```C#``` ```static``` only has a subset of the meanings it has in ```C``` and ```C++```.) In ```C#```, static can be written before a member of a class (variable or method) to indicate that the member belongs to the type (class), rather than an instance of that type/class. To access these ```static``` members, you use the type name rather than the name of an instance of that class. An entire class can also be marked as ```static```. A ```static``` class consists of only ```static``` members, and cannot be instantiated. Instead, it is globablly acessible.
+
+Create a static Settings class to hold the value of the text delay. An example is shown below, and note that it does not inherit from MonoBehaviour.
+```c#
+public static class Settings
+{
+  public static float TEXT_DELAY = 0.05f;
+}
+```
+
+With this Settings class, we can now access the global value of text delay from any script by using ```Settings.TEXT_DELAY```. Edit your Typewriter script to use this global value. Also create a UI slider in the scene, and write and attach a script that will set the global value of TEXT_DELAY on the slider's ```onValueChanged```. This slider script should also set the starting value of the slider to ```Settings.TEXT_DELAY.```
 
 ---
 ## Essential Links
