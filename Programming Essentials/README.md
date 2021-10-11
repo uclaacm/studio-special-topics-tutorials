@@ -192,6 +192,14 @@ private void Attacked()
 
 The example shows how to declare and initialize a UnityEvent, how to use AddListener to subscribe to the event, and how to use Invoke() to trigger all of the functions subscribed to the event. Use events to enable ```Typewriter``` to automatically update its delay without making a call to PlayerPrefs! (Note: You may also need to add a RemoveListener() call in Typewriter's onDestroy() function since static events don't get garbage-collected at the end of a scene).
 
+## Attributes
+To round off our Typewriter + Settings project, we can add some attributes to our scripts. You've probably already been using attributes without knowing it - ```[SerializeField]``` is actually an attribute! There are a variety of other Unity attributes that tell the editor to do certain things. Some other examples of attributes include:
+* ```[RequireComponent]```: Allows you to specify component dependencies, such as requiring that the GameObject with your Text Delay Slider script actually has a slider! If you attach a script requiring another component to an object without that other component, Unity will automatically add that other component for you. Similarly, if you try to remove a component required by your script, Unity will tell you that that's not allowed!
+* ```[DisallowMultipleComponent]```: Prevents multiple copies of a script from being added to the same GameObject.
+* ```[Range]```: Allows you to specify the permitted range of values that you can enter in the editor for a ```public``` or ```[SerializeField]``` variable.
+
+You can find other attributes in the [Unity documentation](https://docs.unity3d.com/ScriptReference/AddComponentMenu.html), although rather annoyingly some attributes like ```[Serializable]``` are found scattered throughout other areas of Unity's documentation. A possibly complete list of the attributes can be found [here](https://github.com/teebarjunk/Unity-Built-In-Attributes).
+
 ---
 ## Essential Links
 - [Studio Discord](https://discord.com/invite/bBk2Mcw)
