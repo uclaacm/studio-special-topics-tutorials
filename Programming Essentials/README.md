@@ -1,6 +1,6 @@
 # Studio Advanced Tutorials - Game Programming Essentials
 
-**Date**: October 13, 2021<br>
+**Date**: October 13, 2021, 7:00 pm - 9:00 pm<br>
 **Location**: ACM Clubhouse (Boelter 2763)<br>
 **Instructor**: Richard Cheng
 
