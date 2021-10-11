@@ -171,7 +171,7 @@ We can use events to achieve this. For your Unity games, you actually have three
 
 For this tutorial we will be using UnityEvents, but solutions for C# events and delegates can also be found within subfolders of ```Assets/Scripts/Solutions```. Below is an example of UnityEvents. Make sure you include ```using UnityEngine.Events;```!
 
-```
+```c#
 public UnityEvent<int> onDamageTaken = new UnityEvent<int>();
 
 void Start()
@@ -186,7 +186,7 @@ private void TakeDamage(int damage)
 
 private void Attacked()
 {
-  onDamageTaken.Invoke(9999)
+  onDamageTaken.Invoke(9999);
 }
 ```
 
