@@ -19,8 +19,8 @@
   * [PlayerPrefs](#playerprefs-and-properties)
   * [Properties](#playerprefs-and-properties)
   * [Events](#events)
-  * Attributes
-  * Console & Debug
+  * [Attributes](#attributes)
+  * [Console & Debug](#console-and-debug)
 ---
 ## Best Practices
 ### Encapsulation and Information Hiding
