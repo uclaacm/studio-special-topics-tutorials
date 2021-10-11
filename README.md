@@ -5,16 +5,15 @@ In this weekly workshop series, you will learn advanced programming concepts and
 We also offer the [Beginner Track](https://github.com/uclaacm/studio-beginner-tutorials-f21) and [Creative Track](https://github.com/uclaacm/studio-creative-tutorials-f21). The Beginner Track covers the fundamentals of game development and using the Unity game engine, and is a good starting point for people without prior programming experience. The Creative Track focuses on non-coding aspects of game development, such as animation, writing, and sound design, and is open to newcomers learning Unity through the Beginner Track as well as creatives with prior Unity experience.
 
 ## Curriculum Overview
-| Tutorials                   | Topics Covered                                                                  | Slides | Live Schedule   |
-|-----------------------------|---------------------------------------------------------------------------------|--------|-----------------|
-| Week 2:                     |             | Slides | TBD             |
-| Week 3:                     |             | Slides | TBD             |
-| Week 4:                     |             | Slides |                 |
-| Week 5:                     |             |        |                 |
-| Week 6:                     |             |        |                 |
-| Week 7:                     |             |        |                 |
-| Week 8:                     |             |        |                 |
-| Week 9:                     |             |        |                 |
+| Tutorials                      | Topics Covered                                                                                          | Live Schedule | Slides | Video |
+|--------------------------------|---------------------------------------------------------------------------------------------------------|---------------|--------|-------|
+| Week 3: Programming Essentials | <ul> <li>Best practices</li> <li>Coroutines and events</li> <li>Useful C# and Unity features</li> </ul> | October 13th  | [Slides](https://docs.google.com/presentation/d/1L0TkCA3rF4-21-083rHygDGLCpq74LlxKdzWgMmwTaU/edit?usp=sharing) | [Video]()
+| Week 4: TBD                    |             | October 20th  |                 |
+| Week 5: TBD                    |             | October 27th  |                 |
+| Week 6: TBD                    |             | November 3rd  |                 |
+| Week 7: TBD                    |             | November 10th |                 |
+| Week 8: TBD                    |             | November 17th |                 |
+| Week 9: TBD                    |             | November 24th |                 |
 
 ## Essential Links
 - [Studio Discord](https://discord.com/invite/bBk2Mcw)
