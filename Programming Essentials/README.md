@@ -18,7 +18,7 @@
   * [```static``` Keyword](#static-keyword)
   * [PlayerPrefs](#playerprefs-and-properties)
   * [Properties](#playerprefs-and-properties)
-  * Events
+  * [Events](#events)
   * Attributes
   * Console & Debug
 ---
@@ -155,6 +155,42 @@ public bool validTime
 ```seconds``` shows a very basic property, in which c# automatically generates a hidden int backing field that the ```get``` and ```set``` functions read from and write to. You can use another variable or property as a backing field, and perform computations on it inside ```get``` and ```set```, as shown by ```minutes```. Finally, ```validTime``` demonstrates how you can also use properties to make read-only variables, by having a public ```get``` but private ```set```.
 
 Convert ```Settings.TEXT_DELAY``` into a property, and use PlayerPrefs to store its value. Now, if you play the game, change the text delay, stop playing and start the game again, you should see that the starting value of the text delay matches what you set it to.
+
+### Events
+Unfortunately, changing to using PlayerPrefs does have a (negative) side effect. Take a moment to determine what has changed for the worse.
+
+<details>
+ <summary>Side Effect</summary>
+ Since our Typewriter scripts check the value of Settings.TEXT_DELAY continuously, we are constantly making calls to PlayerPrefs. This is bad because PlayerPrefs needs to interface with a file, which is a lot slower than checking the value of a single float stored in memory. We need a way to only check the value if it changes!
+</details>
+
+We can use events to achieve this. For your Unity games, you actually have three options in terms of events:
+* Delegates: A low-level C# feature which allow you to store persistent callbacks. Delegates afford the most flexibilty, but also the most room to make mistakes.
+* C# Events: C# events are basically a wrapper around delegates that provide some protection (you can't accidentally overwrite an event, events can only be called from the class they were declared in), at the cost of reduced flexibility. (Sometimes you do want to pass delegates around to a different class, or overwrite the delegate).
+* ```UnityEvent```: Unity also provides events, but they are many times slower than the native C# events. However, their main advantage is that they have Editor integration so you can add functions to be called via drag & drop. In fact, ```Button.onClick``` and ```Slider.onValueChanged``` are actually UnityEvents!
+
+For this tutorial we will be using UnityEvents, but solutions for C# events and delegates can also be found within subfolders of ```Assets/Scripts/Solutions```. Below is an example of UnityEvents. Make sure you include ```using UnityEngine.Events;```!
+
+```
+public UnityEvent<int> onDamageTaken = new UnityEvent<int>();
+
+void Start()
+{
+  onDamageTaken.AddListener(TakeDamage);
+}
+
+private void TakeDamage(int damage)
+{
+  Debug.Log("Ouch! You took " + damage + " damage!");
+}
+
+private void Attacked()
+{
+  onDamageTaken.Invoke(9999)
+}
+```
+
+The example shows how to declare and initialize a UnityEvent, how to use AddListener to subscribe to the event, and how to use Invoke() to trigger all of the functions subscribed to the event. Use events to enable ```Typewriter``` to automatically update its delay without making a call to PlayerPrefs! (Note: You may also need to add a RemoveListener() call in Typewriter's onDestroy() function since static events don't get garbage-collected at the end of a scene).
 
 ---
 ## Essential Links
