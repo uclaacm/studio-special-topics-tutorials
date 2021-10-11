@@ -16,8 +16,8 @@
 * [C# and Unity Features](#c-and-unity-features)
   * [Coroutines](#coroutines)
   * [```static``` Keyword](#static-keyword)
-  * PlayerPrefs
-  * Properties
+  * [PlayerPrefs](#playerprefs-and-properties)
+  * [Properties](#playerprefs-and-properties)
   * Events
   * Attributes
   * Console & Debug
@@ -122,6 +122,39 @@ public static class Settings
 ```
 
 With this Settings class, we can now access the global value of text delay from any script by using ```Settings.TEXT_DELAY```. Edit your Typewriter script to use this global value. Also create a UI slider in the scene, and write and attach a script that will set the global value of TEXT_DELAY on the slider's ```onValueChanged```. This slider script should also set the starting value of the slider to ```Settings.TEXT_DELAY.```
+
+### PlayerPrefs and Properties
+What if we want to store the value of ```Settings.TEXT_DELAY``` when the player closes the game and retain for the next time the game is opened? Unity has a ```PlayerPrefs``` class that can handle this for you. In particular, you can use ```PlayerPrefs.SetFloat(string key, float value)``` and ```PlayerPrefs.GetFloat(string key, float defaultValue)``` to store and retrieve a float from the player preferences file that ```PlayerPrefs``` uses. There are also similar functions for ```int``` and ```string```.
+
+But wait! If we need to write getter and setter functions in our ```Settings``` class to read and write to ```PlayerPrefs```, won't we need to change our other scripts as well? With the magic of properties, a handy C# feature, other scripts can continue interacting with ```Settings.TEXT_DELAY``` as if it were a variable, while having getter and setter functions run whenever a script gets or sets the value the text delay. Properties help encapsulation by hiding getter and setter functions, allowing a clearer divide between data and functions. Below are some examples of properties.
+
+```c#
+public int seconds
+{
+  get;
+  set;
+}
+public float minutes
+{
+  get
+  {
+    return seconds/60.0;
+  }
+  set
+  {
+    seconds = 60 * value;
+  }
+}
+public bool validTime
+{
+  get;
+  private set;
+}
+```
+
+```seconds``` shows a very basic property, in which c# automatically generates a hidden int backing field that the ```get``` and ```set``` functions read from and write to. You can use another variable or property as a backing field, and perform computations on it inside ```get``` and ```set```, as shown by ```minutes```. Finally, ```validTime``` demonstrates how you can also use properties to make read-only variables, by having a public ```get``` but private ```set```.
+
+Convert ```Settings.TEXT_DELAY``` into a property, and use PlayerPrefs to store its value. Now, if you play the game, change the text delay, stop playing and start the game again, you should see that the starting value of the text delay matches what you set it to.
 
 ---
 ## Essential Links
