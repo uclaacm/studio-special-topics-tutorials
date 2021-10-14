@@ -1,4 +1,4 @@
-# Studio Creative Tutorials - Post Processing
+# Studio Advanced Tutorials - NavMeshes
  
 **Date**: October 13, 2021<br>
 **Location**: ACM Club House(Boelter 2763)<br>
@@ -9,10 +9,10 @@
 [Video]()<br>
  
 ## Topics Covered
-* NavMeshes
+* NavMesh Areas
 * NavMesh Agents
 * NavMesh Obstacles and Carving
-* NavMesh 
+* Off Mesh Links
  
 ## What you'll need
 * Nothing! Just Unity Installed
