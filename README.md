@@ -5,15 +5,14 @@ In this weekly workshop series, you will learn advanced programming concepts and
 We also offer the [Beginner Track](https://github.com/uclaacm/studio-beginner-tutorials-f21) and [Creative Track](https://github.com/uclaacm/studio-creative-tutorials-f21). The Beginner Track covers the fundamentals of game development and using the Unity game engine, and is a good starting point for people without prior programming experience. The Creative Track focuses on non-coding aspects of game development, such as animation, writing, and sound design, and is open to newcomers learning Unity through the Beginner Track as well as creatives with prior Unity experience.
 
 ## Curriculum Overview
-Please note this schedule is still tentative and subject to change.
 | Tutorials | Topics Covered | Live Schedule | Slides | Video |
 |-----------|----------------|---------------|--------|-------|
-| Week 3: Navmeshes | | October 13th | Coming Soon! | Coming Soon! |
+| Week 3: Navmeshes |<ul> <li>NavMeshes and pathfinding</li> <li>Obstacles and carving</li> <li>NavMesh links</li> </ul> | October 13th | Coming Soon! | Coming Soon! |
 | [Week 4: Programming Essentials](https://github.com/uclaacm/studio-advanced-tutorials-f21/blob/main/Programming%20Essentials/README.md) | <ul> <li>Best practices</li> <li>Coroutines and events</li> <li>Useful C# and Unity features</li> </ul> | October 20th | [Slides](https://docs.google.com/presentation/d/1L0TkCA3rF4-21-083rHygDGLCpq74LlxKdzWgMmwTaU/edit?usp=sharing) | [Video]() |
 | Week 5: Procedural Generation | | October 27th | | |
-| Week 6: Cyber-Studio Collab Part 1 | | November 3rd | | |
-| Week 7: Yarn Spinner | | November 10th | | |
-| Week 8: Cyber-Studio Collab Part 2 | | November 17th | | |
+| Week 6: Yarn Spinner | | November 3rd | | |
+| Week 7: Cyber-Studio Collab | | November 10th | | |
+| Week 8: Netcode | | November 17th | | |
 | Week 9: Behavior Designer | | November 24th | | |
 
 ## Essential Links
