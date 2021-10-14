@@ -7,7 +7,7 @@ We also offer the [Beginner Track](https://github.com/uclaacm/studio-beginner-tu
 ## Curriculum Overview
 | Tutorials | Topics Covered | Live Schedule | Slides | Video |
 |-----------|----------------|---------------|--------|-------|
-| Week 3: Navmeshes | | October 13th | | |
+| Week 3: Navmeshes | | October 13th | Coming Soon! | Coming Soon! |
 | [Week 4: Programming Essentials](https://github.com/uclaacm/studio-advanced-tutorials-f21/blob/main/Programming%20Essentials/README.md) | <ul> <li>Best practices</li> <li>Coroutines and events</li> <li>Useful C# and Unity features</li> </ul> | October 20th | [Slides](https://docs.google.com/presentation/d/1L0TkCA3rF4-21-083rHygDGLCpq74LlxKdzWgMmwTaU/edit?usp=sharing) | [Video]() |
 | Week 5: TBD | | October 27th | | |
 | Week 6: TBD | | November 3rd | | |
