@@ -2,7 +2,7 @@
  
 **Date**: October 13, 2021<br>
 **Location**: ACM Club House(Boelter 2763)<br>
-**Instructor(s)**: Kade ADams
+**Instructor(s)**: Kade Adams
  
 ## Resources
 [Completed Unity Package](https://drive.google.com/file/d/1QlQ_XwbYnIGlqUGkxl7i-mEmvSxLu-Zt/view?usp=sharing)<br>
