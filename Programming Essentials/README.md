@@ -6,7 +6,7 @@
 
 ## Resources
 [Slides](https://docs.google.com/presentation/d/1L0TkCA3rF4-21-083rHygDGLCpq74LlxKdzWgMmwTaU/edit?usp=sharing)<br>
-[Video]()<br>
+[Video](https://www.youtube.com/watch?v=Ish6Hpikkd4)<br>
 
 ## Topics Covered
 * [Best Practices](#best-practices)
