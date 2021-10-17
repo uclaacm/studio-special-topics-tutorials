@@ -1,7 +1,7 @@
 # Studio Advanced Tutorials - Game Programming Essentials
 
 **Date**: October 20, 2021, 7:00 pm - 9:00 pm<br>
-**Location**: ACM Clubhouse (Boelter 2763)<br>
+**Location**: Engineering IV Faraday Room 67-124<br>
 **Instructor**: Richard Cheng
 
 ## Resources
@@ -204,7 +204,7 @@ You can find many other attributes in the [Unity documentation](https://docs.uni
 One last section! You probably already know how to use ```Debug.Log()```, but did you know that it supports rich text markup so you can add fancy colors and formatting to your debug messages? Here are some tips that are more helpful than fancy markup:
 * ```Debug.Log()``` also has close cousins in the form of ```Debug.LogError()```, ```Debug.LogException()```, and ```Debug.LogWarning()```.
 * You can combine an assertion and a debug statement into one by using ```Debug.Assert(bool condition, string message)```!
-* Remember to comment out debug statements once you've finished debugging with them. Spamming the console full of irrelevant messages makes it harder to find the debug messages you're actually looking for.
+* Remember to comment out unconditional debug statements once you've finished debugging with them. Spamming the console full of irrelevant messages makes it harder to find the debug messages you're actually looking for!
 
 ### Congratulations!
 You have finished reading this incredibly long workshop. You deserve a cookie! I hope you learned something useful and weren't bored out of your mind. If you spotted an typo or error, or would like to thank me for making this tutorial, please head to ACM Studio Discord (link below) and let me know!
