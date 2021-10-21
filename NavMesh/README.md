@@ -6,7 +6,7 @@
  
 ## Resources
 [Completed Unity Package](https://drive.google.com/file/d/1QlQ_XwbYnIGlqUGkxl7i-mEmvSxLu-Zt/view?usp=sharing)<br>
-[Video]()<br>
+[Video](https://www.youtube.com/watch?v=3Yr9BEbGfkU)<br>
  
 ## Topics Covered
 * NavMesh Areas
