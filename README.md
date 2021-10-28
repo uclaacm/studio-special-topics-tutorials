@@ -9,7 +9,7 @@ We also offer the [Beginner Track](https://github.com/uclaacm/studio-beginner-tu
 |-----------|----------------|---------------|--------|-------|
 | [Week 3: Navmeshes](https://github.com/uclaacm/studio-advanced-tutorials-f21/tree/main/NavMesh) |<ul> <li>NavMeshes and pathfinding</li> <li>Obstacles and carving</li> <li>NavMesh links</li> </ul> | October 13th | N/A | [Video](https://youtu.be/3Yr9BEbGfkU) |
 | [Week 4: Programming Essentials](https://github.com/uclaacm/studio-advanced-tutorials-f21/blob/main/Programming%20Essentials/README.md) | <ul> <li>Best practices</li> <li>Coroutines and events</li> <li>Useful C# and Unity features</li> </ul> | October 20th | [Slides](https://docs.google.com/presentation/d/1L0TkCA3rF4-21-083rHygDGLCpq74LlxKdzWgMmwTaU/edit?usp=sharing) | [Video](https://www.youtube.com/watch?v=Ish6Hpikkd4) |
-| Week 5: Procedural Generation | | October 27th | | |
+| [Week 5: Procedural Generation](https://github.com/uclaacm/studio-advanced-tutorials-f21/tree/main/Procedural%20Generation) | <ul> <li>Perlin noise</li> <li>Texture generation</li> <li>Terrain generation</li> <li>Application brainstorm</li> </ul> | October 27th | [Slides](https://docs.google.com/presentation/d/1kWgEEceAj07lHw_i2DttRXVLjxQ-Q-vL3A3clim2hDY/edit?usp=sharing) | Coming Soon! |
 | Week 6: Yarn Spinner | | November 3rd | | |
 | Week 7: Cyber-Studio Collab | | November 10th | | |
 | Week 8: Netcode | | November 17th | | |
