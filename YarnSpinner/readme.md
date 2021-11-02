@@ -75,7 +75,11 @@ We'll cover variable storage later, so skip it for now.
 
 ## Writing Dialogue in Yarn
 
-// TODO
+I recommend using their official online editor provided by Yarn Spinner. You can find it here: https://yarnspinnertool.github.io/YarnEditor/.
+It provides syntax highlighting and graphical representation of node structure, and it's what we'll use in this tutorial.
+For other workflow options like raw text editing with VSCode extension, please refer to this guide: https://yarnspinner.dev/docs/writing/text-editor/
+
+For now, let's just write a couple of plain text nodes connected by options.
 
 ## Dialogue Controller
 
