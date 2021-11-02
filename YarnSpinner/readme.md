@@ -73,6 +73,66 @@ For now, just turn off PlayerController on Player when Dialogue starts and turn 
 
 We'll cover variable storage later, so skip it for now.
 
+## Writing Dialogue in Yarn
+
+// TODO
+
 ## Dialogue Controller
 
-// todo
+Having hooked the UI components into Yarn's components, we now need to write a dialogue controller for the custom logic.
+Remember that Yarn merely "informs" your Mono runtime what's happening within the script, and everything else needs custom logic.
+The steps here are my approach in designing the system, and you should feel free to experiment with what you see fit when putting Yarn Spinner into your own project.
+
+First, create a new class (it's called TextField in my sample code but feel free to name it whatever), and make it a singleton.
+
+To make a class singleton, add the following to the class definition:
+
+```cs
+
+public static TextField instance = null;
+
+private void Awake() {
+    if (instance == null)
+        instance = this;
+    else if (instance != this)
+        Destroy(gameObject);
+}
+
+```
+
+Reason for having this singleton is that we'll later have NPC scripts use its instance to communicate with DialogRunner we just created.
+
+Now let's go over the essential API and delegations of Yarn.
+
+First off is `DialogueRunner.Add(YarnProgram)`.
+This method adds a Yarn program (i.e. yarn script that's imported into Unity) to the DialogueRunner instance, very useful if you want NPCs to hold their dialogue script individually (like what we do in this demo).
+
+Another one that's gonna be used is `DialogueRunner.StartDialogue(string)`, which literally starts a node whose name is specified by the string parameter.
+
+Then give it these public functions and fields:
+
+```cs
+
+[SerializeField]
+TextMeshProUGUI text;
+
+[SerializeField]
+DialogueRunner runner;
+
+public void ShowLine(string line)
+{
+    text.text = line;
+}
+
+public void RegisterSpeaker(YarnProgram script)
+{
+    runner.Add(script);
+}
+
+public void StartDialog(string node)
+{
+    if (!inDialog)
+        runner.StartDialogue(node);
+}
+
+```
