@@ -73,21 +73,72 @@ For now, just turn off PlayerController on Player when Dialogue starts and turn 
 
 We'll cover variable storage later, so skip it for now.
 
+Pay extra attention to `On Line Update`, as this is the exact inteface for your gameplay code to read in dialogue lines.
+
 ## Writing Dialogue in Yarn
 
 I recommend using their official online editor provided by Yarn Spinner. You can find it here: https://yarnspinnertool.github.io/YarnEditor/.
 It provides syntax highlighting and graphical representation of node structure, and it's what we'll use in this tutorial.
 For other workflow options like raw text editing with VSCode extension, please refer to this guide: https://yarnspinner.dev/docs/writing/text-editor/
 
+(There's a small bug with the editor, if for some reason the editor opens without anything but the background, doing a force refresh with ctrl+shift+r to make it reload should resolve the problem)
+
+If you go to File -> Settings, you should see the following:
+
+![image](https://user-images.githubusercontent.com/39484269/139951069-c4e542bf-c2dd-481d-8c7d-0f30d9a9aa96.png)
+
+It means your script here is in English. A script can only have one language setting.
+
 For now, let's just write a couple of plain text nodes connected by options.
+First double click on the empty node automatically generated on opening, and change its title to NPC1.Start (in Yarn runtime, node names are game-scope global instead of local inside a script, i.e. if 2 scripts have the same "Start" node and they both got added to DialogueRunner, bad things happen, thus make sure to give some extra information in each node name to avoid potential crash).
+
+Then type these:
+
+```
+NPC1: Hello
+[[Greet | Greeted]]
+[[Say nothing | Been_rude]]
+```
+
+The first line `Hello` is a "plain text" line, where DialogueUI feed to functions in `On Line Update` event.
+The other 2 are "Options", ones that will be displayed using the buttons we just hooked in DialgueUI, in the same order as you put in the script.
+Inside the options there are 2 parts: text before `|` is the display text, where it's going to show up on the button; text on the right is node name, where DialogueRunner (and the editor) searches for the n
+
+Now when you hit ECS to ga back, and you should see 2 additional nodes have been created.
+This might look familiar if you have experience working with Twine, and it's indeed the editor generating new nodes based on the options in the previous node.
+
+Then go to `Greeted`, and put these:
+
+```
+Wassup?
+NPC1: See ya.
+See ya.
+```
+
+And for the other,
+
+```
+...
+NPC1: ...?
+NPC1: See ya ... I guess.
+```
+
+Finally, save the script. Simply do ctrl+s should work, or you can go to File menu and click "Save as Yar":
+
+![image](https://user-images.githubusercontent.com/39484269/139950752-0055ca04-98d6-46a7-af68-3d7958d665a0.png)
+
+Drag that into your Unity editor and let Yarn transform it into a `Yarn Program`. We'll use this special type of text asset later.
 
 ## Dialogue Controller
 
-Having hooked the UI components into Yarn's components, we now need to write a dialogue controller for the custom logic.
-Remember that Yarn merely "informs" your Mono runtime what's happening within the script, and everything else needs custom logic.
-The steps here are my approach in designing the system, and you should feel free to experiment with what you see fit when putting Yarn Spinner into your own project.
+We'll be writing code starting here, and all the code you need to write are already in the files and commented out, please use that as reference when you lose track of this guide.
 
-First, create a new class (it's called TextField in my sample code but feel free to name it whatever), and make it a singleton.
+Having hooked the UI components into Yarn's components and a very simple script done,, we now need to write a dialogue controller for the custom logic.
+Remember that Yarn merely "informs" your Mono runtime what's happening within the script, and everything else needs custom logic.
+
+Note that the steps here are my approach in designing the system, and you should feel free to experiment with whatever you see fit when putting Yarn Spinner into your own projects.
+
+First, create a new class (it's called `TextField` in my sample code cuz it sounds cool but feel free to name it whatever, just make everything consistent), and make it a singleton.
 
 To make a class singleton, add the following to the class definition:
 
@@ -113,7 +164,7 @@ This method adds a Yarn program (i.e. yarn script that's imported into Unity) to
 
 Another one that's gonna be used is `DialogueRunner.StartDialogue(string)`, which literally starts a node whose name is specified by the string parameter.
 
-Then give it these public functions and fields:
+With that knowledge, we can add these fields and methods:
 
 ```cs
 
@@ -135,8 +186,67 @@ public void RegisterSpeaker(YarnProgram script)
 
 public void StartDialog(string node)
 {
-    if (!inDialog)
-        runner.StartDialogue(node);
+    runner.StartDialogue(node);
 }
 
 ```
+
+I'll explain these one by one.
+
+`ShowLine` sets the incoming text content to `text` which is a TextMeshPro object. You can also swap it with anything that can show text.
+
+`RegisterSpeaker` is called to register a NPC and its corresponding script.
+
+`StartDialogue` is a proxy to `runner.StartDialogue`, for now it doesn't have additional functionality but we'll add stuff later.
+
+This is all we need for the controller for now.
+
+## Hooking Controller into the Game
+
+Next, let's hook the controller by adding the controller to correct slots in DialogueUI's delegations. Before the later steps, attach the controller script from previous section to the object with yarn components.
+
+Go to DialogueUI component we created earlier, find the delegation box saying `On Line Update`, add a new delegation and drag the controller in.
+Then in function selection, find a section saying "dynamic string" and find the `ShowLine` function. 
+This delegation will keep the text box updated as the dialogue lines are rolling.
+
+Then we'll need to change the NPC script.
+Go to the NPC obejct in scene, and open the NonPlayer component attached to it.
+Add the following fields:
+
+```cs
+
+[SerializeField]
+YarnProgram script;
+
+[SerializeField]
+string startingNode = "";
+
+```
+
+Add the following code to `Start`:
+
+```cs
+
+TextField.instance.RegisterSpeaker(script, npcName, pfp);
+
+```
+
+This line of code finds the singleton instance of the controller class, and registers its script to it. The controller will then put the script in DialogueRunner.
+
+Then add these in `TalkTo` method:
+
+```cs
+
+TextField.instance.StartDialog(startingNode);
+
+```
+
+`TalkTo` is called when player gets close to NPC and presses Space (hard coded in `PlayerController`, it's bad habbit hard coding things don't do it in actual projects).
+Here we are adding the actual logic of "talking" to our NPC.
+
+Now go back to the editor and hit play, the dialogue should correctly show up as you use WSAD to approach an NPC and press Space to talk.
+Next up we'll go over more advanced functionality of Yarn, Commands, by implement a profile picture swapping mechanism using Yarn commands.
+
+## Commands
+
+// TODO
