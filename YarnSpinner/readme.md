@@ -73,7 +73,7 @@ For now, just turn off PlayerController on Player when Dialogue starts and turn 
 
 We'll cover variable storage later, so skip it for now.
 
-Pay extra attention to `On Line Update`, as this is the exact inteface for your gameplay code to read in dialogue lines.
+Pay extra attention to `On Line Update`, as this is the exact interface for your gameplay code to read in dialogue lines.
 
 ## Writing Dialogue in Yarn
 
@@ -105,7 +105,7 @@ The other 2 are "Options", ones that will be displayed using the buttons we just
 Inside the options there are 2 parts: text before `|` is the display text, where it's going to show up on the button; text on the right is node name, where DialogueRunner (and the editor) searches for the name.
 Note that node name needs to be one word, i.e. don't put space in it otherwise Yarn will get angry and refuse to load the file as Yarn Program.
 
-Now when you hit ECS to ga back, and you should see 2 additional nodes have been created.
+Now when you hit ESC to go back, and you should see 2 additional nodes have been created.
 This might look familiar if you have experience working with Twine, and it's indeed the editor generating new nodes based on the options in the previous node.
 
 Then go to `Greeted`, and put these:
@@ -124,7 +124,7 @@ NPC1: ...?
 NPC1: See ya ... I guess.
 ```
 
-Finally, save the script. Simply do ctrl+s should work, or you can go to File menu and click "Save as Yar":
+Finally, save the script. Simply do ctrl+s should work, or you can go to File menu and click "Save as Yarn":
 
 ![image](https://user-images.githubusercontent.com/39484269/139950752-0055ca04-98d6-46a7-af68-3d7958d665a0.png)
 
@@ -172,6 +172,8 @@ TextMeshProUGUI text;
 [SerializeField]
 DialogueRunner runner;
 
+public bool inDialog { get; set; } = false;
+
 public void ShowLine(string line)
 {
     text.text = line;
@@ -186,6 +188,14 @@ public void StartDialog(string node)
 {
     runner.StartDialogue(node);
 }
+
+private void Update()
+{
+    if (inDialog && Input.GetKeyDown(KeyCode.Space))
+    {
+        runner.Dialogue.Continue();
+    }
+}
 ```
 
 I'll explain these one by one.
@@ -196,17 +206,21 @@ I'll explain these one by one.
 
 `StartDialogue` is a proxy to `runner.StartDialogue`, for now it doesn't have additional functionality but we'll add stuff later.
 
+What's in the Update function is a call to DialogueRunner to continue to next line.
+DialogueRunner does give this decision to gameplay code, and you can also set the trigger to something else, like a player event.
+
 This is all we need for the controller for now.
 
 ## Hooking Controller into the Game
 
-Next, let's hook the controller by adding the controller to correct slots in DialogueUI's delegations. 
+Next, let's hook the controller by adding the controller to correct slots in DialogueUI's delegations.
 Before the later steps, attach the controller script from previous section to the object with yarn components, and assign the TMP box in canvas to it.
 Drag DialogueRunner component to the field on controller component.
 
 Go to DialogueUI component we created earlier, find the delegation box saying `On Line Update`, add a new delegation and drag the controller in.
 Then in function selection, find a section saying "dynamic string" and find the `ShowLine` function.
 This delegation will keep the text box updated as the dialogue lines are rolling.
+Then add setter of `inDialog` boolean to dialogue start and end delegations, set them accordingly so it's true when dialogue is active and false when dialogue is inactive.
 
 Then we'll need to change the NPC script.
 Go to the NPC obejct in scene, and open the NonPlayer component attached to it.
@@ -282,7 +296,7 @@ public void RegisterSpeaker(YarnProgram script, string name = "", Sprite pfp = n
 }
 ```
 
-Adding the default values allows your code to compile before you fix every instance of usage changed.
+Adding the default values allows your code to compile before you fix every instance of usage.
 
 An Image element is added to the class, and the HandleSetPic function sets the Image to a sprite, from its dictionary of pictures.
 Take a look into the handling logic: `args` is an array containing all the arguments in the original command line.
