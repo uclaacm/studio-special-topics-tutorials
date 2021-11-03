@@ -102,7 +102,8 @@ NPC1: Hello
 
 The first line `Hello` is a "plain text" line, where DialogueUI feed to functions in `On Line Update` event.
 The other 2 are "Options", ones that will be displayed using the buttons we just hooked in DialgueUI, in the same order as you put in the script.
-Inside the options there are 2 parts: text before `|` is the display text, where it's going to show up on the button; text on the right is node name, where DialogueRunner (and the editor) searches for the n
+Inside the options there are 2 parts: text before `|` is the display text, where it's going to show up on the button; text on the right is node name, where DialogueRunner (and the editor) searches for the name.
+Note that node name needs to be one word, i.e. don't put space in it otherwise Yarn will get angry and refuse to load the file as Yarn Program.
 
 Now when you hit ECS to ga back, and you should see 2 additional nodes have been created.
 This might look familiar if you have experience working with Twine, and it's indeed the editor generating new nodes based on the options in the previous node.
@@ -143,7 +144,6 @@ First, create a new class (it's called `TextField` in my sample code cuz it soun
 To make a class singleton, add the following to the class definition:
 
 ```cs
-
 public static TextField instance = null;
 
 private void Awake() {
@@ -152,7 +152,6 @@ private void Awake() {
     else if (instance != this)
         Destroy(gameObject);
 }
-
 ```
 
 Reason for having this singleton is that we'll later have NPC scripts use its instance to communicate with DialogRunner we just created.
@@ -167,7 +166,6 @@ Another one that's gonna be used is `DialogueRunner.StartDialogue(string)`, whic
 With that knowledge, we can add these fields and methods:
 
 ```cs
-
 [SerializeField]
 TextMeshProUGUI text;
 
@@ -188,7 +186,6 @@ public void StartDialog(string node)
 {
     runner.StartDialogue(node);
 }
-
 ```
 
 I'll explain these one by one.
@@ -203,10 +200,12 @@ This is all we need for the controller for now.
 
 ## Hooking Controller into the Game
 
-Next, let's hook the controller by adding the controller to correct slots in DialogueUI's delegations. Before the later steps, attach the controller script from previous section to the object with yarn components.
+Next, let's hook the controller by adding the controller to correct slots in DialogueUI's delegations. 
+Before the later steps, attach the controller script from previous section to the object with yarn components, and assign the TMP box in canvas to it.
+Drag DialogueRunner component to the field on controller component.
 
 Go to DialogueUI component we created earlier, find the delegation box saying `On Line Update`, add a new delegation and drag the controller in.
-Then in function selection, find a section saying "dynamic string" and find the `ShowLine` function. 
+Then in function selection, find a section saying "dynamic string" and find the `ShowLine` function.
 This delegation will keep the text box updated as the dialogue lines are rolling.
 
 Then we'll need to change the NPC script.
@@ -214,21 +213,17 @@ Go to the NPC obejct in scene, and open the NonPlayer component attached to it.
 Add the following fields:
 
 ```cs
-
 [SerializeField]
 YarnProgram script;
 
 [SerializeField]
 string startingNode = "";
-
 ```
 
 Add the following code to `Start`:
 
 ```cs
-
 TextField.instance.RegisterSpeaker(script, npcName, pfp);
-
 ```
 
 This line of code finds the singleton instance of the controller class, and registers its script to it. The controller will then put the script in DialogueRunner.
@@ -236,9 +231,7 @@ This line of code finds the singleton instance of the controller class, and regi
 Then add these in `TalkTo` method:
 
 ```cs
-
 TextField.instance.StartDialog(startingNode);
-
 ```
 
 `TalkTo` is called when player gets close to NPC and presses Space (hard coded in `PlayerController`, it's bad habbit hard coding things don't do it in actual projects).
@@ -249,4 +242,110 @@ Next up we'll go over more advanced functionality of Yarn, Commands, by implemen
 
 ## Commands
 
-// TODO
+Commands are ways your Yarn script/program talk to Monobehaviours.
+To add a command in Yarn script, put something like `<<CommandName arg1 arg2>>`.
+When Yarn sees something enclosed in double angle-brackets, it knows it's a command and will feed it to the command workflow instead of that we discussed for line.
+
+Now let's get some code to work with that.
+First, add this function in your controller class:
+
+```cs
+[SerializeField]
+Image pfpBox;
+
+Dictionary<string, Sprite> nameToPfp = new Dictionary<string, Sprite>();
+
+private void HandleSetPic(string[] args)
+{
+    if (!args || args.Length != 1)
+        throw new UnityException("Error: Command 'SetPic' should have 1 argument, came with " + args.Length.ToString() + " args.");
+
+    string name = args[0];
+    if (!nameToPfp.ContainsKey(name))
+        throw new UnityException("Error: Command 'SetPic' has unknown name '" + name + "'.");
+
+    pfpBox.sprite = nameToPfp[name];
+}
+```
+
+Also change the register function:
+
+```cs
+public void RegisterSpeaker(YarnProgram script, string name = "", Sprite pfp = null)
+{
+    runner.Add(script);
+
+    if (pfp && name != "")
+    {
+        nameToPfp.Add(name, pfp);
+    }
+}
+```
+
+Adding the default values allows your code to compile before you fix every instance of usage changed.
+
+An Image element is added to the class, and the HandleSetPic function sets the Image to a sprite, from its dictionary of pictures.
+Take a look into the handling logic: `args` is an array containing all the arguments in the original command line.
+For example, using the previously written command, `<<CommandName arg1 arg2>>`, `args` would be `{"arg1", "arg2"}`.
+Take special note though, if there are no arguments, the args input from Yarn will be `null` instead of empty,
+and bad things happen if you try to read the length of null.
+
+Here you can see the error messages mentioning a command "SetPic", which is exactly what we'll do next. Add this line in `Start` of your controller class (remember `runner` is a DialogueRunner instance assigned from editor):
+
+```cs
+runner.AddCommandHandler("SetPic", HandleSetPic);
+```
+
+This line will tell the DialogueRunner instance "let `HandleSetPic` function handle all commands named "SetPic".
+Note here I'm enforcing a fixed number of arguments for the command here, but if you want you can also make it dynamic, just handle all the possible cases in your handler function.
+
+Before the next step, let's make a little changes to NPC script so the pfp dictionary actually gets content.
+Go to `NonPlayer` and add these:
+
+```cs
+[SerializeField]
+Sprite pfp;
+[SerializeField]
+string npcName;
+
+private void Start()
+{
+    TextField.instance.RegisterSpeaker(script, npcName, pfp);
+}
+```
+
+This will allow NPCs to set name and pfp on Start, thus when a command to show their face shows up, the controller knows what to put.
+
+Now we can put the commands in the Yarn script.
+Remove all the "NPC1: " and instead put `<<SetPic NPC1>>` before these lines said by NPC.
+The starting node will look like this:
+
+```
+<<SetPic NPC1>>
+Hello
+[[Greet | Greeted]]
+[[Say nothing | Been_rude]]
+```
+
+Same thing happens for the other nodes.
+
+Before starting the game, remember to set NPC1's name and picture.
+The name needs to match the argument after "SetPic" exactly.
+After doing that, booting up the game you should be able to see the picture set to NPC1's picture correctly.
+
+## Variable
+
+I'll only cover the high-level of variable storage here.
+Basically there are a set of special commands in Yarn that lets you set and read variables.
+They are usually interpreted as "saved progress".
+For example, you might want the story to remember a trivial branch (ones using `->` instead of branching).
+You can also hook it to a serialization module (not provided by Yarn Spinner), and use that to save the game, but that alone deserves another full tutorial.
+
+Details can be found here: https://yarnspinner.dev/docs/unity/components/variable-storage/
+
+## End
+
+With that concludes this tutorial on Yarn Spinner.
+Be sure to experiment with different designs using Yarn Spinner, as my way of using it might not be the best practice.
+There are also more features of Yarn Spinner that are kind of specific (like variable storage), and be sure to go on their website if you don't know how to do something.
+There might be something on there.
