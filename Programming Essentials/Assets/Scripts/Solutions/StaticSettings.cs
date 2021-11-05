@@ -4,5 +4,5 @@ using UnityEngine;
 
 public static class StaticSettings
 {
-    public static float TEXT_DELAY = 0.05f;
+	public static float TEXT_DELAY = 0.05f;
 }

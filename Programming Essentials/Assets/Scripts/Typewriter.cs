@@ -21,23 +21,23 @@ public class Typewriter : MonoBehaviour
 		textMesh = GetComponent<TextMeshProUGUI>();	// Get TextMeshPro component
 	}
 
-    void Start()
-    {
-        textMesh.text = sb.ToString();				// Set starting text to be empty
-        time = Time.time;							// Start keeping track of time
-    }
+	void Start()
+	{
+		textMesh.text = sb.ToString();				// Set starting text to be empty
+		time = Time.time;							// Start keeping track of time
+	}
 
-    void Update()
-    {
-    	if (displayed < exampleLine.Length)			// Only update line if we haven't finished
-    	{
-	    	if (Time.time - time > delay)			// Only update line if text delay reached
-	    	{
-	    		sb.Append(exampleLine[displayed]);	// Add next character to StringBuilder
-	    		displayed++;						// Update number of characters
-	    		textMesh.text = sb.ToString();		// Update TextMeshPro component
-	    		time = Time.time;					// Update time since last character
-	    	}
-	    }
-    }
+	void Update()
+	{
+		if (displayed < exampleLine.Length)			// Only update line if we haven't finished
+		{
+			if (Time.time - time > delay)			// Only update line if text delay reached
+			{
+				sb.Append(exampleLine[displayed]);	// Add next character to StringBuilder
+				displayed++;						// Update number of characters
+				textMesh.text = sb.ToString();		// Update TextMeshPro component
+				time = Time.time;					// Update time since last character
+			}
+		}
+	}
 }
