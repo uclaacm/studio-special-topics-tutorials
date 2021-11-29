@@ -11,8 +11,8 @@ This tutorial will go over the basic tasks that will be the building blocks for 
  
 ## Resources
 [Behavior Designer Package](https://drive.google.com/file/d/1b_aTAtmzR6RRIBOvtE6_KwDyV5-pdZOv/view?usp=sharing)<br>
-[Behavior Designer Tutorials]()<br>
-[Behavior Designer RTS/CTS Samples]()<br>
+[Behavior Designer Tutorials](https://drive.google.com/file/d/1BeSDlxmcD6E5FEiBUJrz1h9smtrU-g67/view?usp=sharing)<br>
+[Behavior Designer RTS/CTS Samples](https://drive.google.com/file/d/1l1lhIPIax47fUf9kkBuZnWg-iWCYahSc/view?usp=sharing)<br>
 [Video]()<br>
  
 ## Topics Covered
