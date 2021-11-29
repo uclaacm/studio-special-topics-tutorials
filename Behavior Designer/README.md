@@ -6,8 +6,8 @@
  
 ## Resources
 [Behavior Designer Package](https://drive.google.com/file/d/1b_aTAtmzR6RRIBOvtE6_KwDyV5-pdZOv/view?usp=sharing)<br>
-[Behavior Designer Tutorials]
-[Behavior Designer RTS/CTS Samples]
+[Behavior Designer Tutorials]()<br>
+[Behavior Designer RTS/CTS Samples]()<br>
 [Video]()<br>
  
 ## Topics Covered
