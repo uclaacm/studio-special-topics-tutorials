@@ -3,6 +3,11 @@
 **Date**: Novmeber 28, 2021<br>
 **Location**: It's just a video!<br>
 **Instructor(s)**: Kade Adams
+
+## Introduction
+Behavior Designer is an asset from Opsive that in their own words "is a behavior tree implementation designed for everyone – programmers, artists, designers." This asset offers a powerful and fully visual API to create decision trees for any AI in your game.  <br>
+This tool is super easy to use and learn and allows for what would normally be super complex to become almost trivial. With minimal coding, anyone can use this to design realistic AI's. <br>
+This tutorial will go over the basic tasks that will be the building blocks for your AI's and then dive into some sample games that showcase how you could choose to use Behavior Designer.
  
 ## Resources
 [Behavior Designer Package](https://drive.google.com/file/d/1b_aTAtmzR6RRIBOvtE6_KwDyV5-pdZOv/view?usp=sharing)<br>
