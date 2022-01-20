@@ -8,6 +8,8 @@
 
 [Tutorial Slides](https://docs.google.com/presentation/d/1Q8CErGJr2BbkBjhHgSVbsWuXhWHOZdOm/edit?usp=sharing&ouid=108085216361980557095&rtpof=true&sd=true)<br>
 
+To import unity packages, simply drag and drop the download package into the Assets folder!
+
 [Starting Point](https://drive.google.com/file/d/173HHGf3fXTRx2PvjpGJHowtxy8gV5IX2/view?usp=sharing)<br>
 [Completed Project](https://drive.google.com/file/d/1KDHO1vRDuV-5NreonBUvLZ6gaMoja5IK/view?usp=sharing)
 
