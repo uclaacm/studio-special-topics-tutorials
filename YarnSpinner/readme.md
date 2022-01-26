@@ -1,3 +1,11 @@
+---
+**IMPORTANT WARNING**
+
+Yarn Spinner released a major update in December 2021, going from version 1.2 to 2.0.
+This tutorial is outdated and is not applicable to any 2.0+ versions of Yarn Spinner.
+
+---
+
 # Yarn Spinner Tutorial
 
 This is a brief intro-level tutorial on how to implement dialog system using Yarn Spinner.
