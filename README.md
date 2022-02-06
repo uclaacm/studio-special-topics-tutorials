@@ -7,8 +7,8 @@ We also offer the [Beginner Track](https://github.com/uclaacm/studio-beginner-tu
 ## Curriculum Overview
 | Tutorials | Topics Covered | Live Schedule | Slides | Video |
 |-----------|----------------|---------------|--------|-------|
-| [Week 4: Procedural Dungeon Generation](https://github.com/uclaacm/studio-advanced-tutorials/tree/main/Procedural%20Dungeon%20Generation) | <ul> <li>Room crawlers</li> <li>Loading</li> <li>Camera Movement</li> </ul> | Janurary 26th | [Slides](https://docs.google.com/presentation/d/1Q8CErGJr2BbkBjhHgSVbsWuXhWHOZdOm/edit?usp=sharing&ouid=111675105352016817985&rtpof=true&sd=true) | [Video]() |
-| [Week 7: Physics & Planetary Gravity]() |<ul><li> Rigidbodies </li><li> Quternions </li><li> Physics Functions </li></ul>| Feburary 15th | [Slides](https://docs.google.com/presentation/d/1xFKHS2JsiSC1juhpo34JNVo4eWtlOWUp/edit?usp=sharing&ouid=111675105352016817985&rtpof=true&sd=true) | [Video]() |
+| [Week 4: Procedural Dungeon Generation](https://github.com/uclaacm/studio-advanced-tutorials/tree/main/Procedural%20Dungeon%20Generation) | <ul> <li>Room crawlers</li> <li>Loading</li> <li>Camera Movement</li> </ul> | Janurary 26th | [Slides](https://docs.google.com/presentation/d/1Q8CErGJr2BbkBjhHgSVbsWuXhWHOZdOm/edit?usp=sharing&ouid=111675105352016817985&rtpof=true&sd=true) | N/A |
+| [Week 7: Physics & Planetary Gravity]() |<ul><li> Rigidbodies </li><li> Quternions </li><li> Physics Functions </li></ul>| Feburary 15th | [Slides](https://docs.google.com/presentation/d/1xFKHS2JsiSC1juhpo34JNVo4eWtlOWUp/edit?usp=sharing&ouid=111675105352016817985&rtpof=true&sd=true) | N/A |
 
 ## Essential Links
 - [Studio Discord](https://discord.com/invite/bBk2Mcw)
