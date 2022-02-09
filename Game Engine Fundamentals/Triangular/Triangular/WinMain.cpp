@@ -53,10 +53,10 @@ int CALLBACK WinMain
 
 	Engine engine;
 
-	while (true)
-	{
-		// Does something
-	}
+	// Initialize the engine
+	engine.Initialize();
+	// Have the engine run the main loop
+	WPARAM exitResult = engine.RunMainLoop();
 
-	return 0;
+	return exitResult;
 }
