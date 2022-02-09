@@ -19,7 +19,7 @@ int CALLBACK WinMain
 	int nCmdShow
 )
 {
-	const auto className = L"My First Engine";
+	const wchar_t* className = L"My First Engine";
 
 	// Register window class
 	WNDCLASSEX wc = { 0 };
@@ -51,7 +51,7 @@ int CALLBACK WinMain
 
 	while (true)
 	{
-		// Do nothing
+		// Does something
 	}
 
 	return 0;
