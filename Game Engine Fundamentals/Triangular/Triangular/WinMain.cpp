@@ -1,5 +1,7 @@
 #include "windows.h"
 
+#include "Engine.h"
+
 LRESULT CALLBACK WindowProcedure(HWND windowsHandle, UINT message, WPARAM wParam, LPARAM lParam)
 {
 	switch (message)
@@ -48,6 +50,8 @@ int CALLBACK WinMain
 	);
 
 	ShowWindow(windowHandle, SW_SHOW);
+
+	Engine engine;
 
 	while (true)
 	{
