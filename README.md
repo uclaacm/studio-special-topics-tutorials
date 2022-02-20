@@ -10,6 +10,7 @@ We also offer the [Beginner Track](https://github.com/uclaacm/studio-beginner-tu
 | [Week 4: Procedural Dungeon Generation](https://github.com/uclaacm/studio-advanced-tutorials/tree/main/Procedural%20Dungeon%20Generation) | <ul> <li>Room crawlers</li> <li>Loading</li> <li>Camera Movement</li> </ul> | Janurary 26th | [Slides](https://docs.google.com/presentation/d/1Q8CErGJr2BbkBjhHgSVbsWuXhWHOZdOm/edit?usp=sharing&ouid=111675105352016817985&rtpof=true&sd=true) | N/A |
 | [Week 6: Game Engines](https://github.com/uclaacm/studio-advanced-tutorials/tree/main/Game%20Engine%20Fundamentals/Triangular) | <ul> <li>C++</li> <li>Visual Studio</li> <li>Guest Speaker</li> </ul> | Feburary 9th | N/A | N/A |
 | [Week 7: Physics & Planetary Gravity](https://github.com/uclaacm/studio-advanced-tutorials/tree/main/Planetary%20Gravity) |<ul><li>Rigidbodies</li><li>Quaternions</li><li>Physics Functions</li></ul>| Feburary 15th | [Slides](https://docs.google.com/presentation/d/1xFKHS2JsiSC1juhpo34JNVo4eWtlOWUp/edit?usp=sharing&ouid=111675105352016817985&rtpof=true&sd=true) | N/A |
+| [Week 8: Testing]() |<ul><li>EditMode Tests</li><li>PlayMode Tests</li><li>Manual Tests</li></ul>| Feburary 23rd | [Slides](https://docs.google.com/presentation/d/1pv0s8S2xIAkYhOTCV0sLQZZK-LTi1PN2YvMBtfL9nK4/edit?usp=sharing) | N/A |
 
 ## Essential Links
 - [Studio Discord](https://discord.com/invite/bBk2Mcw)
