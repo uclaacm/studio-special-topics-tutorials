@@ -7,6 +7,7 @@
 ## Resources
 
 [Tutorial Slides](https://docs.google.com/presentation/d/1Q8CErGJr2BbkBjhHgSVbsWuXhWHOZdOm/edit?usp=sharing&ouid=108085216361980557095&rtpof=true&sd=true)<br>
+[Video](https://youtu.be/mI5W8BTo6lY)
 
 To import unity packages, simply drag and drop the download package into the Assets folder!
 
