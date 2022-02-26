@@ -8,7 +8,7 @@ Tune in to learn about the basics of Physics in Unity and implement planetary gr
 ## Resources
 
 [Tutorial Slides](https://docs.google.com/presentation/d/1xFKHS2JsiSC1juhpo34JNVo4eWtlOWUp/edit#slide=id.p1)<br>
-
+[Video](https://youtu.be/5MIXPC3CP9o)
 
 
 Start off with a blank 3D project.
