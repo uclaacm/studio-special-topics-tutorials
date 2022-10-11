@@ -1,16 +1,18 @@
-# Studio Advanced Tutorials - Winter 2022
-## Welcome to the Advanced Track!
-In this weekly workshop series, you will learn advanced programming concepts and Unity packages which can be used to make more interesting games and speed up development. If you have prior coding experience, and would like to learn more, this is the series for you! Prior Unity experience is optional, as long as you are also attending the [Beginner Track](https://github.com/uclaacm/studio-beginner-tutorials). Live workshops will take place at the **Faraday Room 67-124 in Engineering IV** from **7 pm to 9 pm on Wednesdays**, but if you can't attend in person you can also watch edited recordings on our YouTube channel. Unlike the Beginner Track, most of these workshops are independent and do not build upon the previous workshop. But we still encourage you to attend as many as you can to maximize your learning!
+# Studio Special Topics Tutorials - Fall 2022
+## Welcome to the Special Topics Track!
+In this weekly workshop series, you will be exposed to different type of games and systems in game development, from planetary gravity, to artificial intelligence! Our tutorials are made with beginners in mind, so don't worry if you haven't done anything in Unity before! Live workshops will take place at the **Boelter 4685** from **7 pm to 9 pm on Tuesdays**. Unlike the Beginner Track, most of these workshops are independent and do not build upon the previous workshop. But we still encourage you to attend as many as you can to maximize your learning!
 
 We also offer the [Beginner Track](https://github.com/uclaacm/studio-beginner-tutorials) and [Creative Track](https://github.com/uclaacm/studio-creative-tutorials-f21). The Beginner Track covers the fundamentals of game development and using the Unity game engine, and is a good starting point for people without prior programming experience. The Creative Track focuses on non-coding aspects of game development, such as animation, writing, and sound design, and is open to newcomers learning Unity through the Beginner Track as well as creatives with prior Unity experience.
 
 ## Curriculum Overview
-| Tutorials | Topics Covered | Live Schedule | Slides | Video |
-|-----------|----------------|---------------|--------|-------|
-| [Week 4: Procedural Dungeon Generation](https://github.com/uclaacm/studio-advanced-tutorials/tree/main/Procedural%20Dungeon%20Generation) | <ul> <li>Room crawlers</li> <li>Loading</li> <li>Camera Movement</li> </ul> | Janurary 26th | [Slides](https://docs.google.com/presentation/d/1Q8CErGJr2BbkBjhHgSVbsWuXhWHOZdOm/edit?usp=sharing&ouid=111675105352016817985&rtpof=true&sd=true) | [Video](https://youtu.be/mI5W8BTo6lY) |
-| [Week 6: Game Engines](https://github.com/uclaacm/studio-advanced-tutorials/tree/main/Game%20Engine%20Fundamentals/Triangular) | <ul> <li>C++</li> <li>Visual Studio</li> <li>Guest Speaker</li> </ul> | Feburary 9th | [Slides](https://docs.google.com/presentation/d/1Sh9a4JRrRlGJ66inXYvcLEXPYjJTbYsx/edit?usp=sharing&ouid=107091559974011060802&rtpof=true&sd=true) | [Video](https://youtu.be/q0W6U4HcAG0) |
-| [Week 7: Physics & Planetary Gravity](https://github.com/uclaacm/studio-advanced-tutorials/tree/main/Planetary%20Gravity) |<ul><li>Rigidbodies</li><li>Quaternions</li><li>Physics Functions</li></ul>| Feburary 15th | [Slides](https://docs.google.com/presentation/d/1xFKHS2JsiSC1juhpo34JNVo4eWtlOWUp/edit?usp=sharing&ouid=111675105352016817985&rtpof=true&sd=true) | [Video](https://youtu.be/5MIXPC3CP9o) |
-| [Week 8: Testing in Unity](https://github.com/uclaacm/studio-advanced-tutorials/tree/main/Testing%20in%20Unity) |<ul><li>EditMode Tests</li><li>PlayMode Tests</li><li>Manual Tests</li></ul>| Feburary 23rd | [Slides](https://docs.google.com/presentation/d/1pv0s8S2xIAkYhOTCV0sLQZZK-LTi1PN2YvMBtfL9nK4/edit?usp=sharing) | [Video](https://www.youtube.com/watch?v=DaJGuHeHa3c) |
+| Tutorials | Topics Covered | Live Schedule | Slides |
+|-----------|----------------|---------------|--------|
+| [Week 3: Intro (Programming Essentials)]() |<ul><li>Project Set-up</li><li>Source Control</li><li>Coding Tips</li></ul>| October 11th | [Slides]() | 
+| [Week 4: Physics & Planetary Gravity](https://github.com/uclaacm/studio-advanced-tutorials/tree/main/Planetary%20Gravity) |<ul><li>Rigidbodies</li><li>Quaternions</li><li>Physics Functions</li></ul>| October 18th | [Slides](https://docs.google.com/presentation/d/1xFKHS2JsiSC1juhpo34JNVo4eWtlOWUp/edit?usp=sharing&ouid=111675105352016817985&rtpof=true&sd=true) | 
+| [Week 5: Procedural Dungeon Generation](https://github.com/uclaacm/studio-advanced-tutorials/tree/main/Procedural%20Dungeon%20Generation) | <ul> <li>Room crawlers</li> <li>Loading</li> <li>Camera Movement</li> </ul> | October 25th | [Slides](https://docs.google.com/presentation/d/1Q8CErGJr2BbkBjhHgSVbsWuXhWHOZdOm/edit?usp=sharing&ouid=111675105352016817985&rtpof=true&sd=true) | 
+| [Week 6: UI Elements]() |<ul><li>???</li><li>???</li><li>???</li></ul>| November 1st | [Slides]() | 
+| [Week 7: Rhythm Game Fundamentals]() |<ul><li>???</li><li>???</li><li>???</li></ul>| November 8th | [Slides]() | 
+| [Week 8: Studio x AI Collab]() |<ul><li>???</li><li>???</li><li>???</li></ul>| TBD | [Slides]() | 
 
 ## Essential Links
 - [Studio Discord](https://discord.com/invite/bBk2Mcw)
