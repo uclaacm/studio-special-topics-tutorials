@@ -1,0 +1,7 @@
+.selectablepart {
+    background-color: rgba(255, 166, 104, 0.37);
+}
+
+.selectablepart:focus {
+    background-color: rgba(0, 255, 4, 0.45);
+}

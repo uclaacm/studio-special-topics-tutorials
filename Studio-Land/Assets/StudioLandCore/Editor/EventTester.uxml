@@ -1,0 +1,18 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="EventTester.uss" />
+    <ui:VisualElement name="Main">
+        <uie:EnumField label="Type" name="ChannelType" type="EventChannelType, Assembly-CSharp" value="Void" style="display: flex;" />
+        <ui:VisualElement name="Void" style="width: 100%; height: auto; visibility: visible; overflow: visible; display: flex;">
+            <uie:ObjectField label="Void Event Channel" type="VoidEventChannelSO, Assembly-CSharp" name="VoidChannel" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Float" style="width: 100%; height: auto; display: none;">
+            <uie:ObjectField label="Float Event Channel" type="FloatEventChannelSO, Assembly-CSharp" name="FloatChannel" />
+            <uie:FloatField label="Float Field" value="42.2" name="FloatData" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Minigame" style="width: 100%; height: auto; display: none;">
+            <uie:ObjectField label="Minigame Event Channel" type="StudioLand.MinigameEventChannelSO, Assembly-CSharp" name="MinigameChannel" />
+            <uie:ObjectField label="Minigame" name="MinigameData" type="StudioLand.MinigameSO, Assembly-CSharp" />
+        </ui:VisualElement>
+        <ui:Button text="Broadcast!" display-tooltip-when-elided="true" name="Broadcast" />
+    </ui:VisualElement>
+</ui:UXML>

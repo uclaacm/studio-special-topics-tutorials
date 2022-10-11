@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: 
+  m_GroupName: Default Local Group
+  m_Data:
+    m_SerializedData: []
+  m_GUID: a97c8df7f9ca254429311a4295d80740
+  m_SerializeEntries:
+  - m_GUID: 8ee19777467d8b5429d7e0209bda6d75
+    m_Address: Assets/Scenes/PersistentManagers.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 292f90555cfbb194eb4209aa6bfa2bad
+    m_Address: Assets/Scenes/Minigame - UIElements.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 2f1c37e14e88c0342b1b71ec5f055729
+    m_Address: Assets/Scenes/UI.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: cdfff7cf8e259de4db3463c3810a2129
+    m_Address: Assets/Scenes/Main.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 70737fd012d744812a57d3a725f8445a
+    m_Address: Assets/Scenes/PlanetaryGravityScene.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f9575c9082131489c8dec7819ee7df05
+    m_Address: Assets/Scenes/Minigame - Rhythm Game.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 2cda990e2423bbf4892e6590ba056729
+    m_Address: Assets/Examples/RDG/RDGScenes/Main.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 2780b6b57187abe4fae4d0484fc5b5bd, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: ad0cd1fd32b3fbf48a5171cd6196b1f5, type: 2}
+    - {fileID: 11400000, guid: d73fccafce64cb042b15bb44381263a4, type: 2}

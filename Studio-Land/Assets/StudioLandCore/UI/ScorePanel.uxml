@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="studio-land.uss" />
+    <ui:VisualElement name="Main" class="studio-land-panel" style="width: 200px; height: 250px;">
+        <ui:Label text="Results" display-tooltip-when-elided="true" name="Title" class="studio-land-title" style="-unity-text-align: middle-center; width: 200px; left: -5px;" />
+        <ui:Label text="Score: 9876" display-tooltip-when-elided="true" name="Score" style="-unity-text-align: middle-center; top: 56px; color: rgb(255, 83, 83); font-size: 25px; -unity-font-style: bold;" />
+        <ui:Button text="Okay!" display-tooltip-when-elided="true" name="Okay" class="studio-land-button" style="margin-left: auto; margin-right: auto; margin-top: auto; bottom: 12px; width: 110px;" />
+    </ui:VisualElement>
+</ui:UXML>

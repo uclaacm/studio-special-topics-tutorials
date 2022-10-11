@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="studio-land.uss" />
+    <ui:VisualElement name="Main" class="studio-land-panel" style="width: 210px; height: 110px;">
+        <ui:Label text="Are you sure you want to quit?" display-tooltip-when-elided="true" name="QuitMsg" style="color: rgb(226, 93, 93); -unity-font-style: bold; -unity-text-align: middle-center; top: 16px; white-space: nowrap; font-size: 11px;" />
+        <ui:Button text="Yes" display-tooltip-when-elided="true" name="Yes" class="studio-land-button" style="width: 63px; height: 24px; top: 33px; font-size: 11px; margin-left: auto; margin-right: auto;" />
+    </ui:VisualElement>
+</ui:UXML>

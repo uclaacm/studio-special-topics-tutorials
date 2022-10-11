@@ -1,0 +1,12 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="selectable-part.uss" />
+    <Style src="studio-land.uss" />
+    <ui:VisualElement name="MainPanel" focusable="true" class="studio-land-panel" style="width: 600px; height: 326px;">
+        <ui:Label text="Title" display-tooltip-when-elided="true" name="Title" class="studio-land-title" style="width: 600px; right: 5px;" />
+        <ui:VisualElement name="Info" style="width: 100%; height: 192px; margin-top: auto; top: -13px;">
+            <ui:VisualElement name="Picture" style="left: 28px; top: 48px; background-image: url(&apos;/Assets/TextMesh Pro/Examples &amp; Extras/Textures/Gradient Horizontal (Color).jpg&apos;); -unity-background-scale-mode: scale-and-crop; border-left-width: 3px; border-right-width: 3px; border-top-width: 3px; border-bottom-width: 3px; border-left-color: rgb(255, 162, 162); border-right-color: rgb(255, 162, 162); border-top-color: rgb(255, 162, 162); border-bottom-color: rgb(255, 162, 162); width: 188px; height: 132px; flex-shrink: 0; margin-top: auto; margin-bottom: auto;" />
+            <ui:Label text="Here are the instructions for the game. Put some random things about the controls and stuff like that and also what you&apos;re supposed to do in the game." display-tooltip-when-elided="true" name="Description" style="width: 55%; left: -16px; white-space: normal; -unity-text-align: upper-left; position: relative; color: rgb(0, 0, 0); top: -46px; font-size: 17px; -unity-font-style: bold; margin-top: auto; margin-bottom: auto; margin-left: auto;" />
+        </ui:VisualElement>
+        <ui:Button text="Play!" display-tooltip-when-elided="true" name="Play" class="studio-land-button" style="width: 132px; height: 40px; margin-left: auto; left: -13px; top: -14px; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
+    </ui:VisualElement>
+</ui:UXML>

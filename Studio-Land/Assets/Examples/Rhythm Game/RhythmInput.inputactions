@@ -1,0 +1,34 @@
+{
+    "name": "RhythmInput",
+    "maps": [
+        {
+            "name": "Gameplay",
+            "id": "24e0cb68-73df-4f1f-9525-e5d7b64d2de5",
+            "actions": [
+                {
+                    "name": "Press",
+                    "type": "Button",
+                    "id": "a8a3fdd6-2a54-4772-9a9e-06bb42f0e153",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "170cabe2-52bc-4dde-a053-bdb61f19da3c",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Press",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
