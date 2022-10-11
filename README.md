@@ -7,7 +7,7 @@ We also offer the [Intro Track](https://github.com/uclaacm/studio-intro-tutorial
 ## Curriculum Overview
 | Tutorials | Topics Covered | Live Schedule | Slides |
 |-----------|----------------|---------------|--------|
-| [Week 3: Intro (Programming Essentials)]() |<ul><li>Project Set-up</li><li>Source Control</li><li>Coding Tips</li></ul>| October 11th | [Slides]() | 
+| [Week 3: Intro (Programming Essentials)]() |<ul><li>Project Set-up</li><li>Source Control</li><li>Coding Tips</li></ul>| October 11th | [Slides](https://docs.google.com/presentation/d/1HsSWGSeD5_XGQ0oz774c139nE_LlTVrMJ3MxugmI_7w/edit?usp=sharing) | 
 | [Week 4: Physics & Planetary Gravity]() |<ul><li>???</li><li>???</li><li>???</li></ul>| October 18th | [Slides]() | 
 | [Week 5: Procedural Dungeon Generation]() |<ul><li>???</li><li>???</li><li>???</li></ul>| October 25th | [Slides]() | 
 | [Week 6: UI Elements]() |<ul><li>???</li><li>???</li><li>???</li></ul>| November 1st | [Slides]() | 
