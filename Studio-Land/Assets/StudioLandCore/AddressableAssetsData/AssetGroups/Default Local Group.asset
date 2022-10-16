@@ -22,7 +22,7 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 292f90555cfbb194eb4209aa6bfa2bad
-    m_Address: Assets/Scenes/Minigame - UIElements.unity
+    m_Address: Assets/StudioLandCore/Scenes/Minigame - Template.unity
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 2f1c37e14e88c0342b1b71ec5f055729
