@@ -61,18 +61,25 @@ namespace StudioLand
 
         public void EnableGameplayInput()
         {
+            // Enabling/disabling input actions can be complex especially if we have multiple
+            // games and thus many input actions, so simply setting time scale to 0 simplifies logic
+            // at the cost of interfering with any delta time dependent aspects of the game.
+
+            Time.timeScale = 1;
             gameInput.Gameplay.Enable();
             uiInput.Disable();
         }
 
         public void EnableUIInput()
         {
+            Time.timeScale = 0;
             gameInput.Gameplay.Disable();
             uiInput.Enable();
         }
 
         public void DisableAllInput()
         {
+            Time.timeScale = 0;
             gameInput.Gameplay.Disable();
             uiInput.Disable();
         }
