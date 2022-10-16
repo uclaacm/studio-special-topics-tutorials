@@ -12,6 +12,8 @@ namespace StudioLand
         [SerializeField] InputReaderSO playerInput;
         [SerializeField] UnityEvent OnFocus = new UnityEvent();
         [SerializeField] UnityEvent OnDefocus = new UnityEvent();
+        [SerializeField] UIAnimation backgroundFadeInAnimation;
+        [SerializeField] UIAnimation backgroundFadeOutAnimation;
         PanelUI currentFocus;
         PanelUI previousFocus;
 
@@ -24,15 +26,23 @@ namespace StudioLand
         {
             //Defocus();
 
-            if(currentFocus == null && (previousFocus == null || !previousFocus.isAnimating))
+            if(currentFocus == null && 
+                (
+                  previousFocus == null || 
+                 !previousFocus.isAnimating || 
+                 !backgroundFadeInAnimation.IsCurrentlyAnimating || 
+                 !backgroundFadeOutAnimation.IsCurrentlyAnimating
+                )
+            )
                 Focus(panel);
         }
 
         void Focus(PanelUI panel)
         {
             deselectBackground.rootVisualElement.style.display = panel.CanDeselect? DisplayStyle.Flex : DisplayStyle.None;
-            //playerInput.EnableUIInput();
+
             panel.AnimateIn();
+            backgroundFadeInAnimation.StartAnimation();
             currentFocus = panel;
 
             OnFocus?.Invoke();
@@ -41,6 +51,8 @@ namespace StudioLand
         public void Defocus()
         {
             currentFocus?.AnimateOut();
+            backgroundFadeOutAnimation.StartAnimation();
+            
             previousFocus = currentFocus;
             currentFocus = null;
             deselectBackground.rootVisualElement.style.display = DisplayStyle.None;
