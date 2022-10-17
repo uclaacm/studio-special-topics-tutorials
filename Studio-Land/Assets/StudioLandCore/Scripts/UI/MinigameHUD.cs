@@ -17,6 +17,9 @@ namespace StudioLand
 
         void OnEnable()
         {
+            // Hide UI by default
+            document.rootVisualElement.style.display = DisplayStyle.None;
+
             scoreUpdateChannel.OnEventRaised += HandleScoreUpdate;
             startMinigameChannel.OnEventRaised += HandleMinigameStart;
             cleanUpMinigameChannel.OnEventRaised += HandleMinigameEnd;

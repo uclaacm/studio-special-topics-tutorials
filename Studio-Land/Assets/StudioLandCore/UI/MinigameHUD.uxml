@@ -1,5 +1,5 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:VisualElement name="header" style="width: 100%; height: 10%;">
-        <ui:Label text="Score: 0" display-tooltip-when-elided="true" name="score" style="margin-left: auto; margin-right: auto; width: 15%; height: 50%; margin-top: auto; margin-bottom: auto; -unity-font-style: bold; -unity-text-align: middle-center; font-size: 40px;" />
+    <ui:VisualElement name="header" style="width: 100%; height: 72px; background-color: rgba(0, 0, 0, 0.67);">
+        <ui:Label text="Score: 0" display-tooltip-when-elided="true" name="score" style="margin-left: auto; margin-right: auto; width: 15%; height: 50%; margin-top: auto; margin-bottom: auto; -unity-font-style: bold; -unity-text-align: middle-center; font-size: 29px; color: rgb(255, 255, 255); -unity-font: url(&apos;project://database/Assets/StudioLandCore/TextMesh%20Pro/Examples%20&amp;%20Extras/Fonts/Electronic%20Highway%20Sign.TTF?fileID=12800000&amp;guid=8a2b9e2a607dd2143b58c44bc32410b4&amp;type=3#Electronic Highway Sign&apos;); -unity-font-definition: none;" />
     </ui:VisualElement>
 </ui:UXML>
