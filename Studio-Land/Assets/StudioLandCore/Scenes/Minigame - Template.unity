@@ -407,6 +407,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1375765567081113802, guid: fb8a760c0f0ed72439994912de7d75f9, type: 3}
+      propertyPath: endMinigameChannel
+      value: 
+      objectReference: {fileID: 11400000, guid: 60ad5c4c3fb38ae4f99ab4795762e8e8, type: 2}
+    - target: {fileID: 1375765567081113802, guid: fb8a760c0f0ed72439994912de7d75f9, type: 3}
+      propertyPath: startMinigameChannel
+      value: 
+      objectReference: {fileID: 11400000, guid: 5b3e2ac5cc9ef1d47a4467b74cad522d, type: 2}
+    - target: {fileID: 1375765567081113802, guid: fb8a760c0f0ed72439994912de7d75f9, type: 3}
+      propertyPath: cleanUpMinigameChannel
+      value: 
+      objectReference: {fileID: 11400000, guid: 06439b464e0383c4ba0eee8f206bfd32, type: 2}
     - target: {fileID: 1375765567081113803, guid: fb8a760c0f0ed72439994912de7d75f9, type: 3}
       propertyPath: m_Name
       value: Minigame Controller

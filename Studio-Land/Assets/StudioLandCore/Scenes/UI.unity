@@ -438,8 +438,9 @@ GameObject:
   - component: {fileID: 716127205}
   - component: {fileID: 716127204}
   - component: {fileID: 716127208}
+  - component: {fileID: 716127210}
   m_Layer: 5
-  m_Name: Score UI
+  m_Name: Final Score UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -534,18 +535,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1395074021}
-        m_TargetAssemblyTypeName: StudioLand.UIFocuser, Assembly-CSharp
-        m_MethodName: RequestFocus
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 716127205}
-          m_ObjectArgumentAssemblyTypeName: StudioLand.PanelUI, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &716127209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -562,6 +551,34 @@ MonoBehaviour:
   m_ParentUI: {fileID: 0}
   sourceAsset: {fileID: 9197481963319205126, guid: 5d62e65e02c8985449cb68a50d72d4b4, type: 3}
   m_SortingOrder: 0
+--- !u!114 &716127210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 716127203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 923152c34da8d5b4c8f94b93f9120d82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  voidEventChannel: {fileID: 11400000, guid: 60ad5c4c3fb38ae4f99ab4795762e8e8, type: 2}
+  callback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1395074021}
+        m_TargetAssemblyTypeName: StudioLand.UIFocuser, Assembly-CSharp
+        m_MethodName: RequestFocus
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 716127205}
+          m_ObjectArgumentAssemblyTypeName: StudioLand.PanelUI, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &981537867
 GameObject:
   m_ObjectHideFlags: 0
@@ -1100,6 +1117,71 @@ MonoBehaviour:
   m_ParentUI: {fileID: 0}
   sourceAsset: {fileID: 9197481963319205126, guid: fd692440302c8e94fb1bda2aae9959d2, type: 3}
   m_SortingOrder: 1
+--- !u!1 &2096057473
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2096057475}
+  - component: {fileID: 2096057474}
+  - component: {fileID: 2096057476}
+  m_Layer: 5
+  m_Name: Minigame HUD
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2096057474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2096057473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PanelSettings: {fileID: 11400000, guid: 5ad0d30ca333f584aa902e6b98dcc165, type: 2}
+  m_ParentUI: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: d4a788c0c44dcec45a049f7e4aebb817, type: 3}
+  m_SortingOrder: 0
+--- !u!4 &2096057475
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2096057473}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2096057476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2096057473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ced68365be3413c4c801ee65412acfa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  document: {fileID: 2096057474}
+  scoreUpdateChannel: {fileID: 11400000, guid: 7b7ffad854e9d7348a1e0d89e48c3815, type: 2}
+  startMinigameChannel: {fileID: 11400000, guid: 5b3e2ac5cc9ef1d47a4467b74cad522d, type: 2}
+  cleanUpMinigameChannel: {fileID: 11400000, guid: 06439b464e0383c4ba0eee8f206bfd32, type: 2}
 --- !u!114 &2113945413 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 673430022379247102, guid: 9e4012293d5d2c44297b45df19f00f57, type: 3}

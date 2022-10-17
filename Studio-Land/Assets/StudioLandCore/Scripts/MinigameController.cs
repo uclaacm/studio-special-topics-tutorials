@@ -4,15 +4,25 @@ using UnityEngine;
 
 namespace StudioLand
 {
+    /// <summary>
+    /// Class for communicating with the minigame system
+    /// </summary>
     public class MinigameController : MonoBehaviour
     {
         [SerializeField] FloatEventChannelSO scoreUpdateChannel;
-        [SerializeField] VoidEventChannelSO startGameChannel;
-        [SerializeField] VoidEventChannelSO endGameChannel;
+        [SerializeField] VoidEventChannelSO startMinigameChannel;
+        [SerializeField] VoidEventChannelSO endMinigameChannel;
+        [SerializeField] VoidEventChannelSO cleanUpMinigameChannel;
 
-        void Awake()
+        void Start()
         {
-            startGameChannel.RaiseEvent();
+            startMinigameChannel.RaiseEvent();
+            SetGameScore(0);
+        }
+
+        void OnDisable()
+        {
+            cleanUpMinigameChannel.RaiseEvent();
         }
 
         /// <summary>
@@ -28,7 +38,7 @@ namespace StudioLand
         /// </summary>
         public void EndGame()
         {
-            endGameChannel.RaiseEvent();
+            endMinigameChannel.RaiseEvent();
         }
     }
 }
