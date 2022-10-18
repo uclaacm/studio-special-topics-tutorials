@@ -29,20 +29,12 @@ MonoBehaviour:
     m_Address: Assets/Scenes/UI.unity
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: cdfff7cf8e259de4db3463c3810a2129
-    m_Address: Assets/Scenes/Main.unity
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: 70737fd012d744812a57d3a725f8445a
     m_Address: Assets/Scenes/PlanetaryGravityScene.unity
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: f9575c9082131489c8dec7819ee7df05
     m_Address: Assets/Scenes/Minigame - Rhythm Game.unity
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 2cda990e2423bbf4892e6590ba056729
-    m_Address: Assets/Examples/RDG/RDGScenes/Main.unity
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 92ec18ec9d612864ab87b20f18523070

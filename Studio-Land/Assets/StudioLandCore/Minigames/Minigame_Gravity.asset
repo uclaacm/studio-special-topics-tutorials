@@ -19,8 +19,5 @@ MonoBehaviour:
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
-  instructions: 'Remember to change this later to something more interesting
-
-    (anyone
-    get the reference?)'
-  picture: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  instructions: Play around in a gravity playground and collect all the coins!
+  picture: {fileID: 21300000, guid: ad1af448da3ab4cefbc45449061e0d57, type: 3}
