@@ -111,3 +111,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points: 1
+  scoreChannel: {fileID: 11400000, guid: 7b7ffad854e9d7348a1e0d89e48c3815, type: 2}

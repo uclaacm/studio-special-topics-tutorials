@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Flag : MonoBehaviour
 {
+    [SerializeField] VoidEventChannelSO endGameChannel;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,8 +16,9 @@ public class Flag : MonoBehaviour
     {
         if(collision.gameObject.layer == 3) // hit player
         {
-            Debug.Log("loading scene");
-            SceneManager.LoadScene("Main");
+            endGameChannel.RaiseEvent();
+            //Debug.Log("loading scene");
+            //SceneManager.LoadScene("Main");
         }
 
     }
