@@ -8,7 +8,7 @@ We also offer the [Intro Track](https://github.com/uclaacm/studio-intro-tutorial
 | Tutorials | Topics Covered | Live Schedule | Slides | Video |
 |-----------|----------------|---------------|--------|-------|
 | [Week 3: Intro (Programming Essentials)]() |<ul><li>Project Set-up</li><li>Source Control</li><li>Coding Tips</li></ul>| October 11th | [Slides](https://docs.google.com/presentation/d/1HsSWGSeD5_XGQ0oz774c139nE_LlTVrMJ3MxugmI_7w/edit?usp=sharing) | [Video](https://drive.google.com/file/d/11L_VaPYMQwq0ESWh7kXKbxJUPQ5J_FqL/view?usp=sharing)
-| [Week 4: Physics & Planetary Gravity]() |<ul><li>???</li><li>???</li><li>???</li></ul>| October 18th | 
+| [Week 4: Physics & Planetary Gravity]() |<ul><li>Physics</li><li>Spherical Gravity</li><li>Planar, Inverted, and Box Gravity</li></ul>| October 18th | 
 | [Week 5: Procedural Dungeon Generation]() |<ul><li>???</li><li>???</li><li>???</li></ul>| October 25th | 
 | [Week 6: UI Elements]() |<ul><li>???</li><li>???</li><li>???</li></ul>| November 1st | 
 | [Week 7: Rhythm Game Fundamentals]() |<ul><li>???</li><li>???</li><li>???</li></ul>| November 8th | 
