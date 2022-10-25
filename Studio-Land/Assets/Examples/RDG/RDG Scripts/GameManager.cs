@@ -120,7 +120,6 @@ public class GameManager : MonoBehaviour
             countdownTimer.text = "Time: " + timeRem;
             minigameController.SetGameScore(timeRem);
             if (timeRem < 0.5*gameTime) countdownTimer.color = Color.red;
-            //intro menu stuff
             if (timeRem < 0){
                 gameEnded = true;
                 Defeat();
@@ -162,7 +161,7 @@ public class GameManager : MonoBehaviour
         inGameMenu.SetActive(false);
         victoryMenu.SetActive(true);
         
-        //minigameController.SetGameScore(timeRem);
+        minigameController.SetGameScore(timeRem);
         minigameController.EndGame();
         End();
     }
