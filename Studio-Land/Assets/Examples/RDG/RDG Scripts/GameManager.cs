@@ -53,24 +53,27 @@ public class GameManager : MonoBehaviour
     [SerializeField] RenderPipelineAsset renderer2D;
     [SerializeField] RenderPipelineAsset renderer3D;
 
-    void Start() {
+    void Start()
+    {
         CanvasReset();
-
         DontDestroyOnLoad(GameObject.FindGameObjectWithTag("Canvas"));
 
         timeRem = gameTime;
 
         minigameController = GameObject.Find("Minigame Controller").GetComponent<StudioLand.MinigameController>();
     
+        //Sets renderer settings to 2D
         GraphicsSettings.renderPipelineAsset = renderer2D;
         QualitySettings.SetQualityLevel(3,true);
         Debug.Log("renderer changed to 2d");
 
+        //Resets camera
         Destroy(CameraController.instance.gameObject.GetComponent<UnityEngine.Video.VideoPlayer>());
-
+        CameraController.instance.gameObject.GetComponent<AudioListener>().enabled = true;
     }
 
-    private void CanvasReset(){
+    private void CanvasReset()
+    {
         scoreCounter.text = "Runes: 0/" + runeNum;
         scoreCounter.color = Color.white;
         countdownTimer.text = "Time: " + gameTime;
@@ -89,7 +92,8 @@ public class GameManager : MonoBehaviour
         gameWon = false;
     }
 
-    public void ActivateRune(){
+    public void ActivateRune()
+    {
         score++;
         scoreCounter.text = "Runes: " + score + "/" + runeNum;
         if (runeNum == score){
@@ -98,7 +102,8 @@ public class GameManager : MonoBehaviour
     }
 
     //timer function for countdown
-    public void StartCountdown(){
+    public void StartCountdown()
+    {
         if (!gameStarted) {
             gameStarted = true;
             introMenu.SetActive(false);
@@ -107,7 +112,8 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private IEnumerator Countdown(){
+    private IEnumerator Countdown()
+    {
         while (gameStarted && !gameEnded){
             yield return new WaitForSeconds(1f);
             if (!gamePaused) timeRem--;
@@ -121,8 +127,8 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void Defeat(){
-        
+    public void Defeat()
+    {
         if (!gameWon) {
             Time.timeScale = 0f;
 
@@ -137,8 +143,8 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void Victory(){
-
+    public void Victory()
+    {
         if (score != runeNum){
             hintMenu.SetActive(true);
             StartCoroutine(hintMenuCountdown());
@@ -160,47 +166,52 @@ public class GameManager : MonoBehaviour
         End();
     }
 
-    public void omo(){
+    public void omo()
+    {
         gameWon = true;
         minigameController.SetGameScore(99999);
         minigameController.EndGame();
         End();
     }
 
-    private IEnumerator hintMenuCountdown(){
+    private IEnumerator hintMenuCountdown()
+    {
         yield return new WaitForSeconds(3f);
         hintMenu.SetActive(false);
     }
 
-    public bool GameLost(){
+    public bool GameLost()
+    {
         return gameLost;
     }
 
-    public bool GameStarted(){
+    public bool GameStarted()
+    {
         return gameStarted;
     }
 
-    public bool GameEnded(){
+    public bool GameEnded()
+    {
         return gameEnded;
     }
 
     public void End()
     {
-
         Time.timeScale = 1f;
         
+        //Sets rendere back to 3D
         GraphicsSettings.renderPipelineAsset = renderer3D;
         QualitySettings.SetQualityLevel(2,true);
         Debug.Log("renderer changed back to 3d");
-    
+
+        //Destroy game objects    
         Destroy(PlayerMovement.instance.gameObject);
         Destroy(GameManager.instance.gameObject);
         Destroy(RoomLoader.instance.gameObject);
         Destroy(GameObject.FindGameObjectWithTag("Canvas"));
         
-        
-        //Destroy(CameraController.instance.gameObject);
-        
+        //Reset camera
+        CameraController.instance.gameObject.GetComponent<AudioListener>().enabled = false;
     }
 
 

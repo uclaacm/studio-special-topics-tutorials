@@ -63,10 +63,14 @@ public class RoomLoader : MonoBehaviour
         }
 
         AsyncOperation loadRoomOp = SceneManager.LoadSceneAsync(currLoadRoomType, LoadSceneMode.Additive);
+
         while (loadRoomOp.isDone == false)
         {
             yield return null; //continues loading until the async operation is finished
+            Debug.Log("pppp");
         }
+
+
     }
 
     //returns true if coordinate is empty
@@ -103,6 +107,7 @@ public class RoomLoader : MonoBehaviour
     
         //ready to load the next room
         isLoadingRoom = false;
+        SceneManager.MergeScenes(SceneManager.GetSceneByName(currLoadRoomType), SceneManager.GetSceneByName("Main"));
     }
 
     public List<Room> getRooms(){

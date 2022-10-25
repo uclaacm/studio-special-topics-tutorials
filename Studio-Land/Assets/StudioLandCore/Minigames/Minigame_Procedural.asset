@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa3debfd4ccc54d41adeaa0a89beb1e3, type: 3}
   m_Name: Minigame_Procedural
   m_EditorClassIdentifier: 
-  title: Procedural
+  title: Runecat!
   highestScore: 0
   scene:
     m_AssetGUID: 2cda990e2423bbf4892e6590ba056729
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
-  instructions: 'owowowo
+  instructions: 'owo?
 
 '
-  picture: {fileID: 21300114, guid: 29c9cded5e558164aaf8c9bf08aa1510, type: 3}
+  picture: {fileID: 21300092, guid: 29c9cded5e558164aaf8c9bf08aa1510, type: 3}
