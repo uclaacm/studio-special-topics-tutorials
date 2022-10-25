@@ -17,53 +17,46 @@ public class GravitySphere : GravitySource {
 		OnValidate();
 	}
 
-	// Function that Unity calls when the script is loaded or a value changes in the Inspector.
 	void OnValidate () {
-		outerRadius = Mathf.Max(outerRadius, innerRadius);					// Outer radius >= inner radius
-		outerFalloffRadius = Mathf.Max(outerFalloffRadius, outerRadius);	// Outer falloff radius >= outer radius
-		// TODO: innerRadius and innerFalloffRadius
+		innerFalloffRadius = Mathf.Max(innerFalloffRadius, 0f);
+		innerRadius = Mathf.Max(innerRadius, innerFalloffRadius);
+		outerRadius = Mathf.Max(outerRadius, innerRadius);
+		outerFalloffRadius = Mathf.Max(outerFalloffRadius, outerRadius);
 		
+		innerFalloffFactor = 1f / (innerRadius - innerFalloffRadius);
 		outerFalloffFactor = 1f / (outerFalloffRadius - outerRadius);
-		// TODO: innerFalloffFactor
 	}
 	
 	void OnDrawGizmos () {
-		Vector3 center = transform.position;
-
+		Vector3 p = transform.position;
+		if (innerFalloffRadius > 0f && innerFalloffRadius < innerRadius) {
+			Gizmos.color = Color.cyan;
+			Gizmos.DrawWireSphere(p, innerFalloffRadius);
+		}
 		Gizmos.color = Color.yellow;
-		Gizmos.DrawWireSphere(center, outerRadius);
-		// Only draw the outer falloff radius's sphere if it doesn't intersect with the outer radius's
+		if (innerRadius > 0f && innerRadius < outerRadius) {
+			Gizmos.DrawWireSphere(p, innerRadius);
+		}
+		Gizmos.DrawWireSphere(p, outerRadius);
 		if (outerFalloffRadius > outerRadius) {
 			Gizmos.color = Color.cyan;
-			Gizmos.DrawWireSphere(center, outerFalloffRadius);
-		}
-
-		if (innerRadius > 0f && innerRadius < outerRadius) {
-			// TODO: Draw a wire sphere for the innerRadius
-		}
-		// TODO: Draw a wire sphere for the inner falloff radius if it doesn't intersect with the inner radius's sphere
-		if (true) {
-
+			Gizmos.DrawWireSphere(p, outerFalloffRadius);
 		}
 	}
 
-    public override Vector3 GetGravity (Vector3 playerPosition) {
-		// Get vector from the player's position to the center of the sphere
-		Vector3 playerToCenter = transform.position - playerPosition;
-		float distance = playerToCenter.magnitude;
-
-		// We only get gravity from this sphere if the player is the right distance from the center
+    public override Vector3 GetGravity (Vector3 position) {
+		Vector3 vector = transform.position - position;
+		float distance = vector.magnitude;
 		if (distance > outerFalloffRadius || distance < innerFalloffRadius) {
 			return Vector3.zero;
 		}
-
 		float g = gravity / distance;
-		// If the player is further than the outer radius but not further than the outer falloff radius, use a reduced gravity
 		if (distance > outerRadius) {
 			g *= 1f - (distance - outerRadius) * outerFalloffFactor;
 		}
-		// TODO: Implement inner falloff reduced gravity
-		
-		return g * playerToCenter;
+		else if (distance < innerRadius) {
+			g *= 1f - (innerRadius - distance) * innerFalloffFactor;
+		}
+		return g * vector;
 	}
 }

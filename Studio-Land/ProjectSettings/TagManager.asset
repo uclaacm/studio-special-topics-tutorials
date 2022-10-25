@@ -10,6 +10,9 @@ TagManager:
   - Rune
   - EndStatue
   - PlayerEyes
+  - StartPlatform
+  - potowo
+  - RDGCamera
   layers:
   - Default
   - TransparentFX
@@ -46,4 +49,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: RDG
+    uniqueID: 3659204661
     locked: 0

@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class CameraController : MonoBehaviour
 {
 
     public Room currRoom;
     public float camSpeed;
+
+    [SerializeField] Camera camera;
+    [SerializeField] RenderPipelineAsset renderer2D;
 
     public static CameraController instance { get; private set; }
 
@@ -23,6 +27,7 @@ public class CameraController : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
 
     void Update()
     {
@@ -43,4 +48,6 @@ public class CameraController : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, newPos, Time.deltaTime * camSpeed);
 
     }
+
+    
 }

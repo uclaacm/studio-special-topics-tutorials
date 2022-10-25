@@ -12,7 +12,6 @@ public class GravityPlane : GravitySource {
 		scale.y = range;
 		Gizmos.matrix = Matrix4x4.TRS(transform.position, transform.rotation, scale);
 		Vector3 size = new Vector3(1f, 0f, 1f);
-		
 		Gizmos.color = Color.yellow;
 		Gizmos.DrawWireCube(Vector3.zero, size);
         if (range > 0f) {
@@ -22,26 +21,16 @@ public class GravityPlane : GravitySource {
 	}
 
 	public override Vector3 GetGravity (Vector3 position) {
-		// TODO: Vector3.up is not the correct vector here because it's the global up, not up for the player!
-		Vector3 up = Vector3.up;
-
+		Vector3 up = transform.up;
 		float distance = Vector3.Dot(up, position - transform.position);
-
-		// TODO: Return 0 (a 0-vector) if the distance from the player to the plane is greater than the plane's range
-		if (true) {
-			
+		if (distance > range) {
+			return Vector3.zero;
 		}
 		
-		// Gravity should be negative (downward), so inverse the inputted gravity
 		float g = -gravity;
-
-		// TODO: Apply the plane's gravity if the distance is positive and within range of the plane
-		// BONUS: Make the gravity weaker when the player is further away (but still within range)
-		if (true) {
-			
+		if (distance > 0f) {
+			g *= 1f - distance / range;
 		}
-
-		// TODO: Apply the gravity scalar to the local up vector by multiplying
-		return Vector3.zero;
+		return g * up;
 	}
 }

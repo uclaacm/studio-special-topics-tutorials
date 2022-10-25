@@ -15,11 +15,11 @@ MonoBehaviour:
   title: Procedural
   highestScore: 0
   scene:
-    m_AssetGUID: 
+    m_AssetGUID: 2cda990e2423bbf4892e6590ba056729
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
   instructions: 'owowowo
 
 '
-  picture: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  picture: {fileID: 21300114, guid: 29c9cded5e558164aaf8c9bf08aa1510, type: 3}

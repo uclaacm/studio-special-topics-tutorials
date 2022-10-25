@@ -40,10 +40,6 @@ public class PlayerMovement : MonoBehaviour{
     private void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.Escape) && gameStarted){
-            GameManager.instance.PauseUnpause();
-        }
-
         if (GameManager.instance.GameEnded()){
             if (GameManager.instance.GameLost()) Death();
         }

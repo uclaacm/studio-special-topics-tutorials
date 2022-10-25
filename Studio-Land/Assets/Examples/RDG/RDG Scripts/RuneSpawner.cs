@@ -24,8 +24,7 @@ public class RuneSpawner : MonoBehaviour
         }
 
         foreach (Room room in runeRooms){
-            Vector3 location = new Vector3(Random.Range(-7, 7), Random.Range(-3, 3), 0) + room.gameObject.transform.position;
-            location.z = -1;
+            Vector3 location = new Vector3(Random.Range(-7, 7), Random.Range(-3, 3), 5) + room.gameObject.transform.position;
             Instantiate(runeTypes[Random.Range(0, runeTypes.Count)], location, Quaternion.identity, room.gameObject.transform);
             //location constraints so no two are too close to eachother
         }

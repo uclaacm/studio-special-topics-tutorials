@@ -200,3 +200,4 @@ Preset:
     propertyPath: m_SortingLayers.Array.data[3].locked
     value: 0
     objectReference: {fileID: 0}
+  m_ExcludedProperties: []

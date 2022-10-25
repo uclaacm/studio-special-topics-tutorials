@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.Rendering;
 
 public class GameManager : MonoBehaviour
 {
 
     //RUNECAT!
-
-    //Remember to disable event system in the RDG Main scene when playing in the Lobby
 
     public static GameManager instance { get; private set; }
 
@@ -38,33 +37,37 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] GameObject introMenu;
     [SerializeField] GameObject inGameMenu;
-    [SerializeField] GameObject pauseMenu;
     [SerializeField] GameObject victoryMenu;
     [SerializeField] GameObject defeatMenu;
     [SerializeField] GameObject hintMenu;
-
 
     private bool gameStarted = false;
     private bool gamePaused = false;
     private bool gameEnded = false;
     private bool gameLost = false;
+    private bool gameWon = false;
 
     public int runeNum = 15;
 
-    //[SerializeField] Camera lobbyCamera;
-    //[SerializeField] Camera RDGCamera;
+    private StudioLand.MinigameController minigameController;
+    [SerializeField] RenderPipelineAsset renderer2D;
+    [SerializeField] RenderPipelineAsset renderer3D;
 
     void Start() {
-
-        //lobbyCamera.enabled = false;
-        //RDGCamera.enabled = true;
-
         CanvasReset();
 
         DontDestroyOnLoad(GameObject.FindGameObjectWithTag("Canvas"));
-        //DontDestroyOnLoad(GameObject.FindGameObjectWithTag("EventSystem"));
 
         timeRem = gameTime;
+
+        minigameController = GameObject.Find("Minigame Controller").GetComponent<StudioLand.MinigameController>();
+    
+        GraphicsSettings.renderPipelineAsset = renderer2D;
+        QualitySettings.SetQualityLevel(3,true);
+        Debug.Log("renderer changed to 2d");
+
+        Destroy(CameraController.instance.gameObject.GetComponent<UnityEngine.Video.VideoPlayer>());
+
     }
 
     private void CanvasReset(){
@@ -78,7 +81,12 @@ public class GameManager : MonoBehaviour
         victoryMenu.SetActive(false);
         defeatMenu.SetActive(false);
         hintMenu.SetActive(false);
-        pauseMenu.SetActive(false);
+
+        gameStarted = false;
+        gamePaused = false;
+        gameEnded = false;
+        gameLost = false;
+        gameWon = false;
     }
 
     public void ActivateRune(){
@@ -113,32 +121,20 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void PauseUnpause(){
-
-        if (gameStarted && !gameEnded){
-
-            gamePaused = !gamePaused;
-
-            inGameMenu.SetActive(!gamePaused);
-            pauseMenu.SetActive(gamePaused);
-            hintMenu.SetActive(false);
-            
-            if (gamePaused){
-                Time.timeScale = 0f;
-            } else {
-                Time.timeScale = 1f;
-            }
-        }
-    }
-
     public void Defeat(){
         
-        Time.timeScale = 0f;
+        if (!gameWon) {
+            Time.timeScale = 0f;
 
-        gameEnded = true;
-        gameLost = true;
-        inGameMenu.SetActive(false);
-        defeatMenu.SetActive(true);
+            gameEnded = true;
+            gameLost = true;
+            inGameMenu.SetActive(false);
+            defeatMenu.SetActive(true);
+
+            minigameController.SetGameScore(0);
+            minigameController.EndGame();
+            End();
+        }
     }
 
     public void Victory(){
@@ -150,6 +146,7 @@ public class GameManager : MonoBehaviour
         }
 
         gameEnded = true;
+        gameWon = true;
 
         Time.timeScale = 0f;
 
@@ -158,7 +155,16 @@ public class GameManager : MonoBehaviour
         inGameMenu.SetActive(false);
         victoryMenu.SetActive(true);
         
-        //UPLOAD SCORE TO LOBBY
+        minigameController.SetGameScore(timeRem);
+        minigameController.EndGame();
+        End();
+    }
+
+    public void omo(){
+        gameWon = true;
+        minigameController.SetGameScore(99999);
+        minigameController.EndGame();
+        End();
     }
 
     private IEnumerator hintMenuCountdown(){
@@ -178,38 +184,28 @@ public class GameManager : MonoBehaviour
         return gameEnded;
     }
 
-    private void DestroyEverything(){
-        // Destroy(GameObject.FindGameObjectWithTag("Player"));
-        // Destroy(GameObject.FindGameObjectWithTag("MainCamera"));
-        // Destroy(GameObject.FindGameObjectWithTag("RoomController"));
-        // Destroy(GameObject.FindGameObjectWithTag("GameManager"));
-        gameStarted = false;
-        gamePaused = false;
-        gameEnded = false;
-        gameLost = false;
-    }
+    public void End()
+    {
 
-    public void Lobby(int lobbyID){
-        Debug.Log("return to lobby");
-        //upload score if not zero (if not defeated)
-        //Time.timeScale = 1f;
-        //DestroyEverything()
-        //SceneManager.LoadScene(lobbyID);
-
-        //REMEMBER TO SWITCH BACK TO THE LOBBY EVENT SYSTEM
-    }
-
-    public void Restart(){
         Time.timeScale = 1f;
-        DestroyEverything();
-        CanvasReset();
-        gameEnded = false;
-        gameStarted = false;
-        gamePaused = false;
-        gameLost = false;
-        timeRem = gameTime;
-        score = 0;
-        SceneManager.LoadScene("Main");
+        
+        GraphicsSettings.renderPipelineAsset = renderer3D;
+        QualitySettings.SetQualityLevel(2,true);
+        Debug.Log("renderer changed back to 3d");
+    
+        Destroy(PlayerMovement.instance.gameObject);
+        Destroy(GameManager.instance.gameObject);
+        Destroy(RoomLoader.instance.gameObject);
+        Destroy(GameObject.FindGameObjectWithTag("Canvas"));
+        
+        
+        //Destroy(CameraController.instance.gameObject);
+        
     }
+
+
+
+
+
 
 }

@@ -252,7 +252,7 @@ TextureImporter:
       213: 21300164
     second: TX Props Well
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -312,6 +312,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 1
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -335,6 +336,18 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 1
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
@@ -1386,9 +1399,9 @@ TextureImporter:
       TX Props Stone Bench E: 21300100
       TX Props Rune Pillar Broken Glow: 21300064
       TX Props Road Sign E: 21300086
+      TX Props Wooden Gate: 21300158
       TX Props Rune Pillar X2 Glow: 21300044
       TX Props Altar Rune 2: 21300146
-      TX Props Wooden Gate: 21300158
       TX Props Cube: 21300036
       TX Props Stone Coffin V: 21300076
       TX Props Gravestone B: 21300070
