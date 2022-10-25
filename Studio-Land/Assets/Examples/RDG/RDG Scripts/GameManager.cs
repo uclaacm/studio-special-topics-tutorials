@@ -61,13 +61,8 @@ public class GameManager : MonoBehaviour
         timeRem = gameTime;
 
         minigameController = GameObject.Find("Minigame Controller").GetComponent<StudioLand.MinigameController>();
-<<<<<<< HEAD
     
         //Sets renderer settings to 2D
-=======
-        minigameController.SetGameScore(timeRem);
-
->>>>>>> 96c403b13e7db73189415597cda677ff9ad7fa2a
         GraphicsSettings.renderPipelineAsset = renderer2D;
         QualitySettings.SetQualityLevel(3,true);
         Debug.Log("renderer changed to 2d");

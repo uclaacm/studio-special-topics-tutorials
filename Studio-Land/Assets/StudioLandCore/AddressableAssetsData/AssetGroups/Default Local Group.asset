@@ -41,22 +41,6 @@ MonoBehaviour:
     m_Address: Assets/Minigame - PGAP.unity
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 2cda990e2423bbf4892e6590ba056729
-    m_Address: Assets/Examples/RDG/RDG Scenes/RDG.unity
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: ea51f4031f6f18d41bf868d087e5f2ea
-    m_Address: Assets/Examples/RDG/RDG Scenes/End.unity
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 9954649a700fe31439b064d8200b394f
-    m_Address: Assets/Examples/RDG/RDG Scenes/Start.unity
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: afaac66365b7b4f4bbc8f016da7129b6
-    m_Address: Assets/Examples/RDG/RDG Scenes/Empty.unity
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 2780b6b57187abe4fae4d0484fc5b5bd, type: 2}
   m_SchemaSet:
