@@ -61,8 +61,13 @@ public class GameManager : MonoBehaviour
         timeRem = gameTime;
 
         minigameController = GameObject.Find("Minigame Controller").GetComponent<StudioLand.MinigameController>();
+<<<<<<< HEAD
     
         //Sets renderer settings to 2D
+=======
+        minigameController.SetGameScore(timeRem);
+
+>>>>>>> 96c403b13e7db73189415597cda677ff9ad7fa2a
         GraphicsSettings.renderPipelineAsset = renderer2D;
         QualitySettings.SetQualityLevel(3,true);
         Debug.Log("renderer changed to 2d");
@@ -118,6 +123,7 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(1f);
             if (!gamePaused) timeRem--;
             countdownTimer.text = "Time: " + timeRem;
+            minigameController.SetGameScore(timeRem);
             if (timeRem < 0.5*gameTime) countdownTimer.color = Color.red;
             //intro menu stuff
             if (timeRem < 0){
@@ -161,7 +167,7 @@ public class GameManager : MonoBehaviour
         inGameMenu.SetActive(false);
         victoryMenu.SetActive(true);
         
-        minigameController.SetGameScore(timeRem);
+        //minigameController.SetGameScore(timeRem);
         minigameController.EndGame();
         End();
     }

@@ -42,7 +42,7 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 2cda990e2423bbf4892e6590ba056729
-    m_Address: Assets/Examples/RDG/RDG Scenes/Main.unity
+    m_Address: Assets/Examples/RDG/RDG Scenes/RDG.unity
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: ea51f4031f6f18d41bf868d087e5f2ea
