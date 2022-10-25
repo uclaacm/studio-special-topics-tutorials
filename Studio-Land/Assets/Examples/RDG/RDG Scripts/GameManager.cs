@@ -61,7 +61,8 @@ public class GameManager : MonoBehaviour
         timeRem = gameTime;
 
         minigameController = GameObject.Find("Minigame Controller").GetComponent<StudioLand.MinigameController>();
-    
+        minigameController.SetGameScore(timeRem);
+        
         //Sets renderer settings to 2D
         GraphicsSettings.renderPipelineAsset = renderer2D;
         QualitySettings.SetQualityLevel(3,true);
