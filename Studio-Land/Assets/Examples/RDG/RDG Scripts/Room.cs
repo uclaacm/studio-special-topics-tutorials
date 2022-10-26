@@ -23,32 +23,20 @@ public class Room : MonoBehaviour
             return; //no room controller instance created yet
         }
 
-        //positions the room correctly (acts like a constructor)
-        RoomLoader.instance.PositionRoom(this);
+        /* ==========
+        YOUR CODE HERE (Slide 17)
+        ========== */
 
-        doors = GetComponentsInChildren<Door>(); //list of all four doors in room
+        /* ==========
+        YOUR CODE HERE (Slide 20)
+        ========== */
     }
 
     public void SetDoors()
     {
-        foreach(Door d in doors)
-        {
-            switch (d.type)
-            {
-                case Door.Type.top:
-                    if (!RoomLoader.instance.IsCoordEmpty(new Vector2Int(X, Y + 1))) Open(d);
-                    break;
-                case Door.Type.bot:
-                    if (!RoomLoader.instance.IsCoordEmpty(new Vector2Int(X, Y - 1))) Open(d);
-                    break;
-                case Door.Type.left:
-                    if (!RoomLoader.instance.IsCoordEmpty(new Vector2Int(X - 1, Y))) Open(d);
-                    break;
-                case Door.Type.right:
-                    if (!RoomLoader.instance.IsCoordEmpty(new Vector2Int(X + 1, Y))) Open(d);
-                    break;
-            }
-        }
+        /* ==========
+        YOUR CODE HERE (Slide 21)
+        ========== */
     }
 
     public void Open(Door d)
@@ -63,10 +51,9 @@ public class Room : MonoBehaviour
 
     public void OnTriggerStay2D(Collider2D collider)
     {
-        if (collider.tag == "Player")
-        {
-            CameraController.instance.currRoom = this;
-        }
+        /* ==========
+        YOUR CODE HERE (Slide 25)
+        ========== */
     }
 
 }

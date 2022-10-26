@@ -34,40 +34,26 @@ public class RoomLoader : MonoBehaviour
 
     void Update()
     {
-        if (!isLoadingRoom)
-        {
-            if (GetComponent<RDG>().roomsQueue.Count != 0)
-            {
-                currLoadRoomPos = GetComponent<RDG>().roomsQueue.Dequeue();
-                isLoadingRoom = true;
-                StartCoroutine(LoadRoom(currLoadRoomPos));
-            } else if (!doorsSet) {
-                foreach (Room room in loadedRooms){
-                    room.SetDoors();
-                }
-                doorsSet = true;
-            }
-        }
+        /* ==========
+        YOUR CODE HERE (Slide 15)
+        ========== */
+
+        /* ==========
+        YOUR CODE HERE (Slide 22)
+        ========== */
     }
 
     //async operation to load rooms additively (scenes)
     IEnumerator LoadRoom(Vector2Int pos)
     {   
-        //determines type of room based on coordinate
-        if (pos == Vector2Int.zero){
-            currLoadRoomType = "Start";
-        } else if (pos == GetComponent<RDG>().endRoomCoord){
-            currLoadRoomType = "End";
-        } else {
-            currLoadRoomType = "Empty";
-        }
 
-        AsyncOperation loadRoomOp = SceneManager.LoadSceneAsync(currLoadRoomType, LoadSceneMode.Additive);
+        //delete this line
+        yield return null;
 
-        while (loadRoomOp.isDone == false)
-        {
-            yield return null; //continues loading until the async operation is finished
-        }
+        /* ==========
+        YOUR CODE HERE (Slide 15)
+        ========== */
+
     }
 
     //returns true if coordinate is empty
@@ -81,29 +67,9 @@ public class RoomLoader : MonoBehaviour
     //serves as a "constructor" for the rooms (since monobehavior scripts cannot have constructors)
     public void PositionRoom(Room room)
     {
-        if (IsCoordEmpty(currLoadRoomPos))
-        {
-            room.transform.position = new Vector3(currLoadRoomPos.x * room.width, currLoadRoomPos.y * room.height, 0);
-            room.transform.parent = transform;
-            room.name = currLoadRoomType +  " " + currLoadRoomPos.x + "," + currLoadRoomPos.y;
-            
-            room.X = currLoadRoomPos.x;
-            room.Y = currLoadRoomPos.y;
-
-            loadedRooms.Add(room);
-
-            if (currLoadRoomType == "End") {
-                gameObject.GetComponent<RuneSpawner>().SpawnRunes();
-                Debug.Log("runes spawned");
-            }
-        } else
-        {
-            //room already exists
-            Destroy(room.gameObject);
-        }
-    
-        //ready to load the next room
-        isLoadingRoom = false;
+        /* ==========
+        YOUR CODE HERE (Slide 18)
+        ========== */
 
         //combines current scene into the main scene
         //comment the line below out if you want to look at the scenes being loaded
