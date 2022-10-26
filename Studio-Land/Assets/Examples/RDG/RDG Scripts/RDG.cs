@@ -23,6 +23,15 @@ public class Crawler
     //generates a vector2 coordinate adjacent to currPos
     public Vector2Int Step()
     {
+
+        /* ====================
+        
+        Task: 
+        - Generate a random direction (up, down, left or right) each time Step() is called
+        - Return the coordinate (in grid) of a where step this direction will go
+
+        EXAMPLE CODE:
+
         int axis = Random.Range(0, 2); //0 = move horizontally, 1 = move vertically
         int dir = Random.Range(0, 2); //0 = -1 direction, 1 = +1 direction
         
@@ -33,6 +42,8 @@ public class Crawler
         //"steps" in a random location
         if (axis == 0) currPos += new Vector2Int(step, 0);
         else if (axis == 1) currPos += new Vector2Int(0, step);
+
+        ==================== */ 
 
         return currPos;
     }
@@ -63,6 +74,20 @@ public class RDG : MonoBehaviour
     //concatenates room coordinates, cleans list by removing duplicate rooms etc.
     public List<Vector2Int> GenCoordList()
     {
+
+        /* ====================
+        
+        Task: 
+        - Create crawlers and generate, by repeatedly calling Step(), a list of coordinates for each
+        - Clean up list (remove duplicates), manually add starting room
+        - Return the cleaned list of room coordinates
+
+        -> We now have the connected coordinates of rooms in our dungeon!
+        -> This list will be shoved into a queue (FIFO) by the method below
+        -> Both methods called once in Start()
+
+        EXAMPLE CODE:
+
         roomCoords.Clear();
         for (int i = 0; i < numCrawlers; i++)
         {
@@ -75,11 +100,13 @@ public class RDG : MonoBehaviour
         roomCoords = roomCoords.Distinct().ToList();
         //removes starting room (0,0), this is added manually
         roomCoords.RemoveAll(pos => pos == Vector2Int.zero);
+        
+        ==================== */ 
 
         return roomCoords;
     }
 
-    //converts list into queue, finds the end room
+    //converts list into queue (FIFO), finds the end room
     public void addRoomsToQueue()
     {
         roomsQueue.Clear();
