@@ -9,7 +9,7 @@ We also offer the [Intro Track](https://github.com/uclaacm/studio-intro-tutorial
 |-----------|----------------|---------------|--------|-------|
 | [Week 3: Intro (Programming Essentials)]() |<ul><li>Project Set-up</li><li>Source Control</li><li>Coding Tips</li></ul>| October 11th | [Slides](https://docs.google.com/presentation/d/1HsSWGSeD5_XGQ0oz774c139nE_LlTVrMJ3MxugmI_7w/edit?usp=sharing) | [Video](https://drive.google.com/file/d/11L_VaPYMQwq0ESWh7kXKbxJUPQ5J_FqL/view?usp=sharing)
 | [Week 4: Physics & Planetary Gravity]() |<ul><li>Physics</li><li>Spherical Gravity</li><li>Planar, Inverted, and Box Gravity</li></ul>| October 18th | [Slides](https://docs.google.com/presentation/d/1lbRGuOfFdVXr5sXRKsFP7PYZvj9bl6lr/edit?usp=sharing&ouid=101669539585058123423&rtpof=true&sd=true) | [Video](https://drive.google.com/file/d/1fmfU9gruEI5JLOBFVFO668OSIiusdB5W/view?usp=sharing)
-| [Week 5: Procedural Dungeon Generation]() |<ul><li>???</li><li>???</li><li>???</li></ul>| October 25th | 
+| [Week 5: Procedural Dungeon Generation]() |<ul><li>Procedural Rooms</li><li>Doors</li><li>a cat?</li></ul>| October 25th | [Slides](https://docs.google.com/presentation/d/1Jxknf8qmkSpZq5GENNdOd1QGb8BE9ro1/edit?usp=sharing&ouid=101669539585058123423&rtpof=true&sd=true) |
 | [Week 6: UI Elements]() |<ul><li>???</li><li>???</li><li>???</li></ul>| November 1st | 
 | [Week 7: Rhythm Game Fundamentals]() |<ul><li>???</li><li>???</li><li>???</li></ul>| November 8th | 
 | [Week 8: Studio x AI Collab]() |<ul><li>???</li><li>???</li><li>???</li></ul>| TBD | 
