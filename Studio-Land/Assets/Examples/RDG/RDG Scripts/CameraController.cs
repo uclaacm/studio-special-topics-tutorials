@@ -51,12 +51,12 @@ public class CameraController : MonoBehaviour
 
         EXAMPLE CODE:
 
+        ============= */
+
         Vector3 newPos = new Vector3(currRoom.X * currRoom.width, currRoom.Y * currRoom.height);
         newPos.z = transform.position.z;
 
         transform.position = Vector3.MoveTowards(transform.position, newPos, Time.deltaTime * camSpeed);
-
-        ============= */
 
     }
 }

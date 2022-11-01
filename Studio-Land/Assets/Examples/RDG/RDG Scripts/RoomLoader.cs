@@ -49,6 +49,8 @@ public class RoomLoader : MonoBehaviour
 
         EXAMPLE CODE:
 
+        ============= */
+
         if (!isLoadingRoom)
         {
             //TASK 1:
@@ -66,7 +68,6 @@ public class RoomLoader : MonoBehaviour
                 doorsSet = true;
             }
         }
-        ============= */
 
     }
 
@@ -87,6 +88,8 @@ public class RoomLoader : MonoBehaviour
 
         EXAMPLE CODE:
 
+        ==================== */
+
         //determines type of room based on coordinate
         if (pos == Vector2Int.zero){
             currLoadRoomType = "Start";
@@ -96,14 +99,12 @@ public class RoomLoader : MonoBehaviour
             currLoadRoomType = "Empty";
         }
 
-        AsyncOperation loadRoomOp SceneManager.LoadSceneAsync(currLoadRoomType, LoadSceneMode.Additive);
+        AsyncOperation loadRoomOp = SceneManager.LoadSceneAsync(currLoadRoomType, LoadSceneMode.Additive);
         
         while (loadRoomOp.isDone == false)
         {
             yield return null; //continues loading until the async operation is finished
-        }
-
-        ==================== */ 
+        } 
 
     }
 
@@ -131,6 +132,8 @@ public class RoomLoader : MonoBehaviour
 
         EXAMPLE CODE:
 
+        ============= */
+
         if (IsCoordEmpty(currLoadRoomPos))
         {
             room.transform.position = new Vector3(currLoadRoomPos.x * room.width, currLoadRoomPos.y * room.height, 0);
@@ -154,8 +157,6 @@ public class RoomLoader : MonoBehaviour
     
         //ready to load the next room
         isLoadingRoom = false;
-
-        ============= */
 
         //combines current scene into the main scene
         //comment the line below out if you want to look at the scenes being loaded

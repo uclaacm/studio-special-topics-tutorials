@@ -31,11 +31,11 @@ public class Room : MonoBehaviour
         - Call the "constructor" we created in RoomLoader, PositionRoom, for this room
 
         EXAMPLE CODE:
+        
+        ============= */
 
         //positions the room correctly (acts like a constructor)
         RoomLoader.instance.PositionRoom(this);
-
-        ============= */
 
         /* =============
 
@@ -45,10 +45,11 @@ public class Room : MonoBehaviour
         - get all door components (children of room game object) and store in a list
 
         EXAMPLE CODE:
+        
+        ============= */
 
         doors = GetComponentsInChildren<Door>(); //list of all four doors in room
 
-        ============= */
 
     }
 
@@ -65,6 +66,7 @@ public class Room : MonoBehaviour
 
     EXAMPLE CODE:
 
+    ============= */
 
         foreach(Door d in doors)
         {
@@ -84,8 +86,6 @@ public class Room : MonoBehaviour
                     break;
             }
         }
-
-    ============= */
 
     }
 
@@ -110,12 +110,14 @@ public class Room : MonoBehaviour
 
         EXAMPLE CODE:
 
+        
+        ============= */
+
         if (collider.tag == "Player")
         {
             CameraController.instance.currRoom = this;
         }
-
-        ============= */
+        
     }
 
 }

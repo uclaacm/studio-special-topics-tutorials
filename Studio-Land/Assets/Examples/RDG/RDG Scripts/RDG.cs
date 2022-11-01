@@ -34,6 +34,8 @@ public class Crawler
 
         EXAMPLE CODE:
 
+        ==================== */ 
+
         int axis = Random.Range(0, 2); //0 = move horizontally, 1 = move vertically
         int dir = Random.Range(0, 2); //0 = -1 direction, 1 = +1 direction
         
@@ -44,8 +46,6 @@ public class Crawler
         //"steps" in a random location
         if (axis == 0) currPos += new Vector2Int(step, 0);
         else if (axis == 1) currPos += new Vector2Int(0, step);
-
-        ==================== */ 
 
         return currPos;
     }
@@ -92,6 +92,8 @@ public class RDG : MonoBehaviour
 
         EXAMPLE CODE:
 
+        ==================== */ 
+
         roomCoords.Clear();
         for (int i = 0; i < numCrawlers; i++)
         {
@@ -104,8 +106,6 @@ public class RDG : MonoBehaviour
         roomCoords = roomCoords.Distinct().ToList();
         //removes starting room (0,0), this is added manually
         roomCoords.RemoveAll(pos => pos == Vector2Int.zero);
-        
-        ==================== */ 
 
         return roomCoords;
     }
