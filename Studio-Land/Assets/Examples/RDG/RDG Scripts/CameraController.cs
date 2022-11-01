@@ -44,6 +44,8 @@ public class CameraController : MonoBehaviour
 
         /* =============
 
+        SLIDE 24
+
         Task:
         - Snap camera to room player is currently in (currRoom, will be set later in Room script)
 
@@ -55,7 +57,6 @@ public class CameraController : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, newPos, Time.deltaTime * camSpeed);
 
         ============= */
-    }
 
-    
+    }
 }

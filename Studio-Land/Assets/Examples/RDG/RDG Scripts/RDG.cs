@@ -26,6 +26,8 @@ public class Crawler
 
         /* ====================
         
+        SLIDE 10
+
         Task: 
         - Generate a random direction (up, down, left or right) each time Step() is called
         - Return the coordinate (in grid) of a where step this direction will go
@@ -76,6 +78,8 @@ public class RDG : MonoBehaviour
     {
 
         /* ====================
+
+        SLIDE 11
         
         Task: 
         - Create crawlers and generate, by repeatedly calling Step(), a list of coordinates for each

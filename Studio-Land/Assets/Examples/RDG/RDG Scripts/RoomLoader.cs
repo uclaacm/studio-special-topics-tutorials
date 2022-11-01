@@ -37,9 +37,13 @@ public class RoomLoader : MonoBehaviour
 
         /* =============
 
+        SLIDE 16
+
         Task 1:
         - Load a room whenever RoomLoader is not currently loading a room (and if there are rooms left)
         
+        SLIDE 22
+
         Task 2:
         - After loading ALL rooms, call SetDoors for each loaded room
 
@@ -54,7 +58,7 @@ public class RoomLoader : MonoBehaviour
                 isLoadingRoom = true;
                 StartCoroutine(LoadRoom(currLoadRoomPos));
             } 
-            //TASK 2:
+            // TASK 2:
             else if (!doorsSet) {
                 foreach (Room room in loadedRooms){
                     room.SetDoors();
@@ -62,8 +66,8 @@ public class RoomLoader : MonoBehaviour
                 doorsSet = true;
             }
         }
-
         ============= */
+
     }
 
     //async operation to load rooms additively (scenes)
@@ -73,6 +77,8 @@ public class RoomLoader : MonoBehaviour
         yield return null;
 
         /* =============
+
+        SLIDE 15
 
         Task:
         - Delete the yield return line above
@@ -97,7 +103,8 @@ public class RoomLoader : MonoBehaviour
             yield return null; //continues loading until the async operation is finished
         }
 
-        ============= */
+        ==================== */ 
+
     }
 
     //returns true if coordinate is empty
@@ -114,13 +121,15 @@ public class RoomLoader : MonoBehaviour
 
         /* =============
 
+        SLIDE 18
+
         Task:
         - Set transform position of each room to (grid) coordinate * size
         - Set the X and Y (grid) coordinates (see Room class) accordingly so we can find rooms easily later
         - Add room to list of LoadedRooms
         - Reset the flag isLoadingRoom to prepare to load the next room
 
-        EXAMPLE CODE
+        EXAMPLE CODE:
 
         if (IsCoordEmpty(currLoadRoomPos))
         {

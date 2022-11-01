@@ -25,6 +25,8 @@ public class Room : MonoBehaviour
 
         /* =============
 
+        SLIDE 17
+
         Task:
         - Call the "constructor" we created in RoomLoader, PositionRoom, for this room
 
@@ -37,6 +39,8 @@ public class Room : MonoBehaviour
 
         /* =============
 
+        SLIDE 20
+
         Task:
         - get all door components (children of room game object) and store in a list
 
@@ -45,6 +49,7 @@ public class Room : MonoBehaviour
         doors = GetComponentsInChildren<Door>(); //list of all four doors in room
 
         ============= */
+
     }
 
     public void SetDoors()
@@ -52,11 +57,14 @@ public class Room : MonoBehaviour
 
     /* =============
 
+    SLIDE 21
+
     Task:
     - Iterate through top, bot, left, right to check if there is an adjacent room (use IsCoordEmpty in RoomLoader)
     - "Open" the door by setting the renderer transparent and disable the collider (use Open())
 
     EXAMPLE CODE:
+
 
         foreach(Door d in doors)
         {
@@ -78,6 +86,7 @@ public class Room : MonoBehaviour
         }
 
     ============= */
+
     }
 
     public void Open(Door d)
@@ -93,6 +102,8 @@ public class Room : MonoBehaviour
     public void OnTriggerStay2D(Collider2D collider)
     {
         /* =============
+
+        SLIDE 25
 
         Task:
         - Set currRoom to this room if player enters the collider trigger of the room (already made in prefab)
