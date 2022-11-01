@@ -96,6 +96,8 @@ public class RoomLoader : MonoBehaviour
             currLoadRoomType = "Empty";
         }
 
+        AsyncOperation loadRoomOp SceneManager.LoadSceneAsync(currLoadRoomType, LoadSceneMode.Additive);
+        
         while (loadRoomOp.isDone == false)
         {
             yield return null; //continues loading until the async operation is finished
