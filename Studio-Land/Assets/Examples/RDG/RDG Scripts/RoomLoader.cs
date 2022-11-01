@@ -96,13 +96,6 @@ public class RoomLoader : MonoBehaviour
             currLoadRoomType = "Empty";
         }
 
-        //delete this line
-        yield return null;
-
-        /* ==========
-        YOUR CODE HERE (Slide 15)
-        ========== */
-
         while (loadRoomOp.isDone == false)
         {
             yield return null; //continues loading until the async operation is finished
