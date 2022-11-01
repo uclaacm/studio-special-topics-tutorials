@@ -271,7 +271,7 @@ MonoBehaviour:
   m_PanelSettings: {fileID: 11400000, guid: 5ad0d30ca333f584aa902e6b98dcc165, type: 2}
   m_ParentUI: {fileID: 0}
   sourceAsset: {fileID: 9197481963319205126, guid: 5a27dd9d474b2db49af299f710ed8edc, type: 3}
-  m_SortingOrder: 1
+  m_SortingOrder: -1
 --- !u!4 &949591582
 Transform:
   m_ObjectHideFlags: 0
@@ -300,6 +300,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   document: {fileID: 949591581}
+  hideOnAwake: 1
 --- !u!1 &1374299032
 GameObject:
   m_ObjectHideFlags: 0
@@ -429,6 +430,7 @@ GameObject:
   - component: {fileID: 1489046791}
   - component: {fileID: 1489046790}
   - component: {fileID: 1489046792}
+  - component: {fileID: 1489046793}
   m_Layer: 5
   m_Name: Desktop
   m_TagString: Untagged
@@ -451,7 +453,7 @@ MonoBehaviour:
   m_PanelSettings: {fileID: 11400000, guid: 5ad0d30ca333f584aa902e6b98dcc165, type: 2}
   m_ParentUI: {fileID: 0}
   sourceAsset: {fileID: 9197481963319205126, guid: 92adea0ebf17f714b954255ea67b9917, type: 3}
-  m_SortingOrder: 0
+  m_SortingOrder: -2
 --- !u!4 &1489046791
 Transform:
   m_ObjectHideFlags: 0
@@ -488,6 +490,35 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: PanelHider, Assembly-CSharp
         m_MethodName: SetHideState
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1489046793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1489046789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb48022f60f5e4844bf1809c3843f328, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  document: {fileID: 1489046790}
+  buttonTag: HomeButton
+  OnButtonPressed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2055475884}
+        m_TargetAssemblyTypeName: StudioLand.MinigameController, Assembly-CSharp
+        m_MethodName: EndGame
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -541,6 +572,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2055475884 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1375765567081113802, guid: fb8a760c0f0ed72439994912de7d75f9, type: 3}
+  m_PrefabInstance: {fileID: 1375765568568809027}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b83d1ce193ce4c046a7c426498d9d81b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1375765568568809027
 PrefabInstance:
   m_ObjectHideFlags: 0

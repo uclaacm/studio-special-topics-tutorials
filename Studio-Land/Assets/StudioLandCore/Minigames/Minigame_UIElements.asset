@@ -12,12 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa3debfd4ccc54d41adeaa0a89beb1e3, type: 3}
   m_Name: Minigame_UIElements
   m_EditorClassIdentifier: 
-  title: Button Mash!
+  title: My Desktop
   highestScore: 0
   scene:
-    m_AssetGUID: 
+    m_AssetGUID: c0d38263f3eb7244da23b4436bd937b8
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
-  instructions: Click the button as many times as you can in 10 seconds!
-  picture: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  instructions: Welcome to your desktop! Here you can find all the important apps
+    and files you use on a daily basis. Looks pretty bland... maybe you can spice
+    it up a bit?
+  picture: {fileID: 21300000, guid: bc2e5626db3a4904f9c8bd8251de6966, type: 3}
