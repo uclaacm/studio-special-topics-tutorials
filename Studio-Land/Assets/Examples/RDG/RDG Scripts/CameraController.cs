@@ -28,7 +28,6 @@ public class CameraController : MonoBehaviour
         }
     }
 
-
     void Update()
     {
         MoveCam();
@@ -36,17 +35,28 @@ public class CameraController : MonoBehaviour
 
     private void MoveCam()
     {
+
         if (currRoom == null)
         {
             Debug.Log("current room not set");
             return;
         }
 
-        /* ==========
-        YOUR CODE HERE (Slide 24)
-        ========== */
+        /* =============
+
+        SLIDE 24
+
+        Task:
+        - Snap camera to room player is currently in (currRoom, will be set later in Room script)
+
+        EXAMPLE CODE:
+
+        ============= */
+
+        Vector3 newPos = new Vector3(currRoom.X * currRoom.width, currRoom.Y * currRoom.height);
+        newPos.z = transform.position.z;
+
+        transform.position = Vector3.MoveTowards(transform.position, newPos, Time.deltaTime * camSpeed);
 
     }
-
-    
 }

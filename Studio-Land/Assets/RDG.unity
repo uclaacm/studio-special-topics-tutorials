@@ -1757,7 +1757,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc35fdd6dfa9e2145b0a353e0ef80837, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameTime: 10
+  gameTime: 100
   scoreCounter: {fileID: 1248741380}
   countdownTimer: {fileID: 1039297471}
   finalScore: {fileID: 2111451252}
@@ -1766,7 +1766,7 @@ MonoBehaviour:
   victoryMenu: {fileID: 222647416}
   defeatMenu: {fileID: 206717456}
   hintMenu: {fileID: 1630320}
-  runeNum: 1
+  runeNum: 10
   renderer2D: {fileID: 11400000, guid: 18a5509bd69097346a43d7b0f5fd205d, type: 2}
   renderer3D: {fileID: 11400000, guid: 19ba41d7c0026c3459d37c2fe90c55a0, type: 2}
 --- !u!4 &2030913860
