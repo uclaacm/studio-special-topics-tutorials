@@ -41,6 +41,14 @@ MonoBehaviour:
     m_Address: Assets/Minigame - PGAP.unity
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: c0d38263f3eb7244da23b4436bd937b8
+    m_Address: Assets/UIElements.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 2cda990e2423bbf4892e6590ba056729
+    m_Address: Assets/RDG.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 2780b6b57187abe4fae4d0484fc5b5bd, type: 2}
   m_SchemaSet:
