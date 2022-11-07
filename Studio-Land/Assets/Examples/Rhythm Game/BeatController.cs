@@ -15,28 +15,37 @@ public class BeatController : MonoBehaviour
     [Tooltip("Time to end of song, in seconds, not including any offset")]
     [SerializeField] private float endTime;
 
+    /* Calculated once when game Controller loads */
+    [Header("Debug Fields")]
+    [Tooltip("Time to when the song will start, including offset")]
+    public float startTime;
+    [Tooltip("BPM / 60")]
+    public float beatsPerSecond;
+    [Tooltip("1 / BPS (or equivalently, 60 / BPM")]
+    public float secondsPerBeat;
+    [Tooltip("Offset in seconds until song starts (simply converted from songStartOffset")]
+    public float songStartOffsetInSeconds;
+
+    [Tooltip("Clock that ticks (approximately) every beat")]
+    public float debugClock;
+
+    /* Calculated every Update() */
+    [Tooltip("Song position in seconds")]
+    public float songPosition;
+    [Tooltip("Song position in beats")]
+    public float songPositionInBeats;
+
     /* Various external components */
     [Header("External Components")]
     [SerializeField] private GameObject notePrefab;
     [SerializeField] private Player player;
 
+    [SerializeField] private VoidEventChannelSO sceneReadyChannelSO;
     [SerializeField] private AudioCueEventChannelSO globalAudioMessenger;
+    [SerializeField] private AudioCueSO audioCue;
+    [SerializeField] private AudioConfigurationSO audioConfig;
+
     private StudioLand.MinigameController minigameController;
-
-    /* Calculated once when game Controller loads */
-    [Header("Debug Fields")]
-    public float startTime;
-    public float beatsPerSecond;
-    public float secondsPerBeat;
-
-    public float debugClock;
-
-    /* Calculated every Update() */
-    public float songPosition;
-    public float songPositionInBeats;
-
-    /* Component fields */
-    private AudioSource audioSource;
 
     /* Fields to set up notes */
     private Queue<(float, float)> beatmap = new Queue<(float, float)>();
@@ -44,20 +53,21 @@ public class BeatController : MonoBehaviour
 
     void Awake()
     {
-        audioSource = this.GetComponent<AudioSource>();
-
         beatsPerSecond = bpm / 60;
         secondsPerBeat = 1 / beatsPerSecond;
-        startTime = (float)AudioSettings.dspTime + songStartOffset * secondsPerBeat;
+        songStartOffsetInSeconds = songStartOffset * secondsPerBeat;
+
+        startTime = (float)AudioSettings.dspTime + songStartOffsetInSeconds;
         endTime += songStartOffset * secondsPerBeat;
+
         SetBeatmap();
         debugClock = 1;
-
-        globalAudioMessenger.RaiseStopEvent(new AudioCueKey(0, null));
     }
 
     void Start()
     {
+        sceneReadyChannelSO.OnEventRaised += HandleSceneReadied;
+        
         minigameController = GameObject.Find("Minigame Controller").GetComponent<StudioLand.MinigameController>();
         player = GameObject.Find("Player").GetComponent<Player>();
     }
@@ -65,10 +75,6 @@ public class BeatController : MonoBehaviour
     void Update()
     {
         songPosition = ((float)AudioSettings.dspTime - startTime);
-        if (songPosition >= startTime && !audioSource.isPlaying)
-        {
-            audioSource.Play();
-        }
         songPositionInBeats = beatsPerSecond * songPosition;
         float start, middle, end;
         Note note;
@@ -105,7 +111,7 @@ public class BeatController : MonoBehaviour
     public void SetBeatmap()
     {
         beatmap.Clear(); 
-        for (float i = 1; i < 31; i ++)
+        for (float i = 3; i < 31; i ++)
         {
             beatmap.Enqueue(((i - Note.DEFAULT_LEEWAY) * secondsPerBeat, (i + Note.DEFAULT_LEEWAY) * secondsPerBeat));
         }
@@ -137,5 +143,18 @@ public class BeatController : MonoBehaviour
             note.lifetime = songPosition - (debugClock * secondsPerBeat - Note.fallTime); 
             debugClock += 1;
         }
+    }
+    
+    private void HandleSceneReadied()
+    {
+        globalAudioMessenger.RaiseStopEvent(AudioCueKey.Invalid);
+
+        StartCoroutine(PlayMusicWithOffset());
+    }
+
+    private IEnumerator PlayMusicWithOffset()
+    {
+        yield return new WaitForSeconds(songStartOffsetInSeconds);
+        globalAudioMessenger.RaisePlayEvent(audioCue, audioConfig, Vector3.zero);
     }
 }
