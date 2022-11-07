@@ -6,11 +6,6 @@ using TMPro;
 
 public class Player : MonoBehaviour
 {
-    
-    // [SerializeField] private float jumpTime;
-    // private bool jumping;
-    // private float timer;
-
     [SerializeField] private int score;
     [SerializeField] private int combo;
     private BeatController controller;
@@ -18,8 +13,6 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        // timer = 0f;
-        // jumping = false;
         score = 0;
         combo = 0;
         controller = GameObject.Find("Audio Source").GetComponent<BeatController>();
@@ -27,28 +20,40 @@ public class Player : MonoBehaviour
         updateText();
     }
 
+    void Update()
+    {
+        updateText();
+    }
+
     public void OnPress(InputValue value)
     {
-        float curBeat = controller.songPositionInBeats;
+        float curTime = controller.songPosition;
         Note nearestNote;
-        if (controller.getCurrentlyLiveNotes().Count > 0) {
+        float beatStartTime, beatEndTime;
+        
+        if (controller.getCurrentlyLiveNotes().Count > 0)
+        {
             nearestNote = controller.getCurrentlyLiveNotes().Peek();
-            float diff = Mathf.Abs(curBeat - nearestNote.beat);
-            // Implement handle to avoid spam press
-            if (diff < Note.LEEWAY) {
-                // jumping = true;
-                score += 1;
-                combo += 1;
-                Destroy(nearestNote.gameObject);
-            }
-            if (nearestNote.destroyBeat <= curBeat) {
-                combo = 0;
+            beatStartTime = nearestNote.getBeatStart();
+            beatEndTime = nearestNote.getBeatEnd();
+
+            if (beatStartTime <= curTime && curTime <= beatEndTime)
+            {
+                HitNote(nearestNote);
             }
         }
         updateText();
     }
 
+    public void HitNote(Note note)
+    {
+        score += 1;
+        combo += 1;
+        Destroy(note.gameObject);
+        controller.DequeueFrontNote();
+    }
+
     public int getScore() { return score; }
     public void resetPlayerCombo() { combo = 0; updateText(); }
-    private void updateText() { scoreText.text = $"Score: {score}\nCombo: {combo}"; }
+    private void updateText() { scoreText.text = $"Score: {score}\nCombo: {combo}\ncurBeat: {controller.songPositionInBeats}"; }
 }
