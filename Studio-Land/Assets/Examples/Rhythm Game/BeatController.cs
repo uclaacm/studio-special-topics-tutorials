@@ -132,7 +132,7 @@ public class BeatController : MonoBehaviour
      */
 
     // Creates the beat map
-    // Note that the i tracks beats, but the beatmap itself is converted to
+    // Note that the i tracks beats, but the beatmap itself is converted to seconds
     private void SetBeatmap()
     {
         beatmap.Clear(); 
