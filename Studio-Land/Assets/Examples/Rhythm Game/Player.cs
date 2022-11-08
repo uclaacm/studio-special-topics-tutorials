@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
         score = 0;
         combo = 0;
         maxCombo = 0;
-        controller = GameObject.Find("Audio Source").GetComponent<BeatController>();
+        controller = GameObject.Find("Beat Controller").GetComponent<BeatController>();
         scoreText = GameObject.Find("Score Text").GetComponent<TMP_Text>();
     }
 
@@ -62,6 +62,7 @@ public class Player : MonoBehaviour
         combo += 1;
         Destroy(note.gameObject);
         controller.DequeueFrontNote();
+        controller.PlayHit();
     }
 
     private void updateText()
