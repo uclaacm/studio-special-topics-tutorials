@@ -80,6 +80,7 @@ public class Note : MonoBehaviour
     /* Getters and Setters */ 
     public float getBeatStart() { return beatStart; }
     public float getBeatEnd() { return beatEnd; }
-    private void SetPlayer(Player player) { this.player = player; }
-    private void SetController(BeatController controller) { this.controller = controller; }
+    public void SetPlayer(Player player) { this.player = player; }
+    public void SetController(BeatController controller) { this.controller = controller; }
+    public void SetLifetime(float time) { this.lifetime = time; }
 }

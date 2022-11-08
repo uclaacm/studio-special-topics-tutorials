@@ -89,8 +89,8 @@ public class BeatController : MonoBehaviour
             if(songPosition >= middle - Note.fallTime)
             {
                 note = GameObject.Instantiate(notePrefab).GetComponent<Note>();
-                note.player = player;
-                note.controller = this;
+                note.SetPlayer(player);
+                note.SetController(this);
                 note.SetInitialState(start, end, (songPosition - (middle - Note.fallTime)));
                 currentlyLiveNotes.Enqueue(note);
                 beatmap.Dequeue();
@@ -140,7 +140,7 @@ public class BeatController : MonoBehaviour
         {
             Note note = GameObject.Instantiate(notePrefab).GetComponent<Note>();
             note.transform.localScale = new Vector3(100f, .01f, 1);
-            note.lifetime = songPosition - (debugClock * secondsPerBeat - Note.fallTime); 
+            note.SetLifetime(debugClock * secondsPerBeat - Note.fallTime); 
             debugClock += 1;
         }
     }
