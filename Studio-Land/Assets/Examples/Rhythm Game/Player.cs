@@ -35,22 +35,12 @@ public class Player : MonoBehaviour
     // Event that is called whenever player presses "Spacebar"
     public void OnPress(InputValue value)
     {
-        float curTime = controller.songPosition;
-        Note nearestNote;
-        float beatStartTime, beatEndTime;
-        
-        if (controller.getCurrentlyLiveNotes().Count > 0)
-        {
-            nearestNote = controller.getCurrentlyLiveNotes().Peek();
-            beatStartTime = nearestNote.getBeatStart();
-            beatEndTime = nearestNote.getBeatEnd();
-
-            if (beatStartTime <= curTime && curTime <= beatEndTime)
-            {
-                HitNote(nearestNote);
-            }
-        }
-        updateText();
+        /** TODO #4
+         * Implement logic for checking if notes are being pressed and scoring
+         * 
+         * To get you started, the easiest way to do this is to check the time when the next note has to be pressed
+         * And compare it to the current time
+         */
     }
 
     /* Helpers */
