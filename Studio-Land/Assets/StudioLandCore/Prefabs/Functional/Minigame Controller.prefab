@@ -45,5 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreUpdateChannel: {fileID: 11400000, guid: 7b7ffad854e9d7348a1e0d89e48c3815, type: 2}
-  startGameChannel: {fileID: 11400000, guid: 5b3e2ac5cc9ef1d47a4467b74cad522d, type: 2}
-  endGameChannel: {fileID: 11400000, guid: 60ad5c4c3fb38ae4f99ab4795762e8e8, type: 2}
+  startMinigameChannel: {fileID: 11400000, guid: 5b3e2ac5cc9ef1d47a4467b74cad522d, type: 2}
+  endMinigameChannel: {fileID: 11400000, guid: 60ad5c4c3fb38ae4f99ab4795762e8e8, type: 2}
+  cleanUpMinigameChannel: {fileID: 11400000, guid: 06439b464e0383c4ba0eee8f206bfd32, type: 2}
