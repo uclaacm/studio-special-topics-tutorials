@@ -41,8 +41,10 @@ public class BeatController : MonoBehaviour
     [SerializeField] private Player player;
 
     [SerializeField] private VoidEventChannelSO sceneReadyChannelSO;
-    [SerializeField] private AudioCueEventChannelSO globalAudioMessenger;
-    [SerializeField] private AudioCueSO audioCue;
+    [SerializeField] private AudioCueEventChannelSO globalMusicMessenger;
+    [SerializeField] private AudioCueEventChannelSO globalSFXMessenger;
+    [SerializeField] private AudioCueSO musicCue;
+    [SerializeField] private AudioCueSO beatCue;
     [SerializeField] private AudioConfigurationSO audioConfig;
 
     private StudioLand.MinigameController minigameController;
@@ -124,6 +126,7 @@ public class BeatController : MonoBehaviour
     /* Getters / Setters */
     public Queue<Note> getCurrentlyLiveNotes() { return currentlyLiveNotes; }
     public void DequeueFrontNote() { currentlyLiveNotes.Dequeue(); }
+    public void PlayHit() { globalSFXMessenger.RaisePlayEvent(beatCue, audioConfig, Vector3.zero); }
 
     /* Helpers */
     /**
@@ -176,14 +179,14 @@ public class BeatController : MonoBehaviour
     /* Various setup to handle audio and music */
     private void HandleSceneReadied()
     {
-        globalAudioMessenger.RaiseStopEvent(AudioCueKey.Invalid);
+        globalMusicMessenger.RaiseStopEvent(AudioCueKey.Invalid);
         StartCoroutine(PlayMusicWithOffset());
     }
 
     private IEnumerator PlayMusicWithOffset()
     {
         yield return new WaitForSeconds(songStartOffsetInSeconds);
-        globalAudioMessenger.RaisePlayEvent(audioCue, audioConfig, Vector3.zero);
+        globalMusicMessenger.RaisePlayEvent(musicCue, audioConfig, Vector3.zero);
     }
     
     private void OnDestroy()

@@ -622,7 +622,7 @@ GameObject:
   - component: {fileID: 1407312982}
   - component: {fileID: 1407312980}
   m_Layer: 0
-  m_Name: Audio Source
+  m_Name: Beat Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -646,14 +646,17 @@ MonoBehaviour:
   startTime: 0
   beatsPerSecond: 0
   secondsPerBeat: 0
+  songStartOffsetInSeconds: 0
   debugClock: 0
   songPosition: 0
   songPositionInBeats: 0
   notePrefab: {fileID: 6512897580865789671, guid: 730d56f0219634b579b5d150f997292d, type: 3}
   player: {fileID: 1712525401}
   sceneReadyChannelSO: {fileID: 11400000, guid: f6622d6f16403f542bd734c0e3f37146, type: 2}
-  globalAudioMessenger: {fileID: 11400000, guid: dbf504192788eea4c9045082341d2513, type: 2}
-  audioCue: {fileID: 11400000, guid: 8d49188cbfaac4c38a710086cda4b903, type: 2}
+  globalMusicMessenger: {fileID: 11400000, guid: dbf504192788eea4c9045082341d2513, type: 2}
+  globalSFXMessenger: {fileID: 11400000, guid: d242a5d414dc1424d9591b8b9c224ecf, type: 2}
+  musicCue: {fileID: 11400000, guid: 8d49188cbfaac4c38a710086cda4b903, type: 2}
+  beatCue: {fileID: 0}
   audioConfig: {fileID: 11400000, guid: f6fbb8ab9b7d6412ea485e28202959e3, type: 2}
 --- !u!4 &1407312982
 Transform:
@@ -700,8 +703,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77ad4db165a914292881df056811fb68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 0
-  combo: 0
 --- !u!4 &1712525402
 Transform:
   m_ObjectHideFlags: 0
