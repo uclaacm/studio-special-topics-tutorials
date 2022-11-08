@@ -36,7 +36,7 @@ public class BeatController : MonoBehaviour
     public float songPositionInBeats;
 
     /* Various external components */
-    [Header("External Components")]
+    [Header("External Objects")]
     [SerializeField] private GameObject notePrefab;
     [SerializeField] private Player player;
 

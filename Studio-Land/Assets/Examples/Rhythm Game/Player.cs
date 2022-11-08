@@ -4,20 +4,27 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
 
+/// <summary>
+/// Class <c>Player</c> that handles player input, score, and the score UI.
+/// </summary>
 public class Player : MonoBehaviour
 {
-    [SerializeField] private int score;
-    [SerializeField] private int combo;
+    /* Fields for scoring */
+    private int score;
+    private int combo;
+    private int maxCombo;
+
+    /* External objects */
     private BeatController controller;
     private TMP_Text scoreText;
 
-    void Start()
+    void Awake()
     {
         score = 0;
         combo = 0;
+        maxCombo = 0;
         controller = GameObject.Find("Audio Source").GetComponent<BeatController>();
         scoreText = GameObject.Find("Score Text").GetComponent<TMP_Text>();
-        updateText();
     }
 
     void Update()
@@ -25,6 +32,7 @@ public class Player : MonoBehaviour
         updateText();
     }
 
+    // Event that is called whenever player presses "Spacebar"
     public void OnPress(InputValue value)
     {
         float curTime = controller.songPosition;
@@ -45,7 +53,10 @@ public class Player : MonoBehaviour
         updateText();
     }
 
-    public void HitNote(Note note)
+    /* Helpers */
+    
+    // Increments score and destroys the hit note
+    private void HitNote(Note note)
     {
         score += 1;
         combo += 1;
@@ -53,7 +64,13 @@ public class Player : MonoBehaviour
         controller.DequeueFrontNote();
     }
 
+    private void updateText()
+    {
+        scoreText.text = $"Score: {score}\nCombo: {combo}\ncurBeat: {controller.songPositionInBeats}";
+    }
+    
+    /* Getters and Setters */
     public int getScore() { return score; }
-    public void resetPlayerCombo() { combo = 0; updateText(); }
-    private void updateText() { scoreText.text = $"Score: {score}\nCombo: {combo}\ncurBeat: {controller.songPositionInBeats}"; }
+    public int getFinalScore() { return score * maxCombo; }
+    public void resetPlayerCombo() { if (combo > maxCombo) maxCombo = combo; combo = 0; updateText(); }
 }
