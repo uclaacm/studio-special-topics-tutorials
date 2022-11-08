@@ -15,9 +15,9 @@ MonoBehaviour:
   title: Rhythm
   highestScore: 0
   scene:
-    m_AssetGUID: 
+    m_AssetGUID: f9575c9082131489c8dec7819ee7df05
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
   instructions: Bop to the Beat!
-  picture: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  picture: {fileID: 21300000, guid: 704e92aab579847cfa846667e78503a1, type: 3}
