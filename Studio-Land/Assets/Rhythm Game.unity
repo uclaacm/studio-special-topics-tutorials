@@ -657,7 +657,9 @@ MonoBehaviour:
   globalSFXMessenger: {fileID: 11400000, guid: d242a5d414dc1424d9591b8b9c224ecf, type: 2}
   musicCue: {fileID: 11400000, guid: 8d49188cbfaac4c38a710086cda4b903, type: 2}
   beatCue: {fileID: 11400000, guid: d619b76185bf74977889f275b5370777, type: 2}
-  audioConfig: {fileID: 11400000, guid: f6fbb8ab9b7d6412ea485e28202959e3, type: 2}
+  sfxConfig: {fileID: 11400000, guid: 6b42c99763682d64ba019b447d78be04, type: 2}
+  musicConfig: {fileID: 11400000, guid: 7dc92129d2e4ae84dabc197b593ba446, type: 2}
+  silence: {fileID: 11400000, guid: 41ea1139be95bce47aa8bdc2291d4837, type: 2}
 --- !u!4 &1407312982
 Transform:
   m_ObjectHideFlags: 0

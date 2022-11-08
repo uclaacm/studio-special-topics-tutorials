@@ -18,9 +18,14 @@ namespace StudioLand
 
 
 
-        void Awake()
+        void OnEnable()
         {
             sceneReadyChannelSO.OnEventRaised += HandleSceneReadied;
+        }
+
+        void OnDisable()
+        {
+            sceneReadyChannelSO.OnEventRaised -= HandleSceneReadied;
         }
 
         void HandleSceneReadied()

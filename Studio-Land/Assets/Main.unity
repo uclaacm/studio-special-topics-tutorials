@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18318772, g: 0.22884375, b: 0.3065002, a: 1}
+  m_IndirectSpecularColor: {r: 0.18318756, g: 0.22884332, b: 0.30649954, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1114,7 +1114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a9dc1781965e74468777a920d5d431d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  music: {fileID: 11400000, guid: 6c6482cba69c88842a937693bbd2db80, type: 2}
+  music: {fileID: 11400000, guid: 012b9cfd102a2674aaeeba910646877f, type: 2}
   musicConfigurationSO: {fileID: 11400000, guid: 7dc92129d2e4ae84dabc197b593ba446, type: 2}
   sceneReadyChannelSO: {fileID: 11400000, guid: f6622d6f16403f542bd734c0e3f37146, type: 2}
   musicEventChannelSO: {fileID: 11400000, guid: dbf504192788eea4c9045082341d2513, type: 2}

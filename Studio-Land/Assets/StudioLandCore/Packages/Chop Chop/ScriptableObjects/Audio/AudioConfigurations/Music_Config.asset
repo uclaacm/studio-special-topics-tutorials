@@ -12,11 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b357a35b19afa6e4ca9ed9cc1830f6de, type: 3}
   m_Name: Music_Config
   m_EditorClassIdentifier: 
-  OutputAudioMixerGroup: {fileID: -2919845427630868010, guid: 548a7f001ca6d3d4cb67c8edf84f62a3,
-    type: 2}
+  OutputAudioMixerGroup: {fileID: -2919845427630868010, guid: 548a7f001ca6d3d4cb67c8edf84f62a3, type: 2}
   _priorityLevel: 128
   Mute: 0
-  Volume: 1
+  Volume: 0.2
   Pitch: 1
   PanStereo: 0
   ReverbZoneMix: 1

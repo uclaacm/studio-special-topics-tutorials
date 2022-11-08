@@ -45,7 +45,8 @@ public class BeatController : MonoBehaviour
     [SerializeField] private AudioCueEventChannelSO globalSFXMessenger;
     [SerializeField] private AudioCueSO musicCue;
     [SerializeField] private AudioCueSO beatCue;
-    [SerializeField] private AudioConfigurationSO audioConfig;
+    [SerializeField] private AudioConfigurationSO sfxConfig;
+    [SerializeField] private AudioConfigurationSO musicConfig;
 
     private StudioLand.MinigameController minigameController;
 
@@ -64,12 +65,15 @@ public class BeatController : MonoBehaviour
 
         SetBeatmap();
         debugClock = 1;
+
+        //sceneReadyChannelSO.OnEventRaised += HandleSceneReadied;
     }
+
 
     void Start()
     {
-        sceneReadyChannelSO.OnEventRaised += HandleSceneReadied;
-        
+        globalMusicMessenger.RaiseStopEvent(AudioCueKey.Invalid);
+        StartCoroutine(PlayMusicWithOffset());
         minigameController = GameObject.Find("Minigame Controller").GetComponent<StudioLand.MinigameController>();
         player = GameObject.Find("Player").GetComponent<Player>();
     }
@@ -111,7 +115,7 @@ public class BeatController : MonoBehaviour
     /* Getters / Setters */
     public Queue<Note> getCurrentlyLiveNotes() { return currentlyLiveNotes; }
     public void DequeueFrontNote() { currentlyLiveNotes.Dequeue(); }
-    public void PlayHit() { globalSFXMessenger.RaisePlayEvent(beatCue, audioConfig, Vector3.zero); }
+    public void PlayHit() { globalSFXMessenger.RaisePlayEvent(beatCue, sfxConfig); }
     /* Helpers */
 
     // Creates the beat map
@@ -156,21 +160,17 @@ public class BeatController : MonoBehaviour
         }
     }
     
-    /* Various setup to handle audio and music */
-    private void HandleSceneReadied()
-    {
-        globalMusicMessenger.RaiseStopEvent(AudioCueKey.Invalid);
-        StartCoroutine(PlayMusicWithOffset());
-    }
+    // /* Various setup to handle audio and music */
+    // private void HandleSceneReadied()
+    // {
+    //     globalMusicMessenger.RaiseStopEvent(AudioCueKey.Invalid);
+    //     StartCoroutine(PlayMusicWithOffset());
+    // }
 
     private IEnumerator PlayMusicWithOffset()
     {
         yield return new WaitForSeconds(songStartOffsetInSeconds);
-        globalMusicMessenger.RaisePlayEvent(musicCue, audioConfig, Vector3.zero);
+        globalMusicMessenger.RaisePlayEvent(musicCue, musicConfig);
     }
     
-    private void OnDestroy()
-    {
-        sceneReadyChannelSO.OnEventRaised -= HandleSceneReadied;
-    }
 }
