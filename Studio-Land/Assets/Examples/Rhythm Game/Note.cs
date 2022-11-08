@@ -43,7 +43,7 @@ public class Note : MonoBehaviour
         beatStart = start;
         beatEnd = end;
         lifetime = time;
-        this.transform.localScale = new Vector3(1, (beatEnd - beatStart) * controller.secondsPerBeat * fallSpeed, 1);
+        this.transform.localScale = new Vector3(1, (beatEnd - beatStart) * controller.secondsPerBeat * fallSpeed * 2, 1);
     }
 
     // Lerps and checks destruction

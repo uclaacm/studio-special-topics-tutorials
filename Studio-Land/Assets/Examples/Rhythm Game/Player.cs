@@ -71,6 +71,6 @@ public class Player : MonoBehaviour
     
     /* Getters and Setters */
     public int getScore() { return score; }
-    public int getFinalScore() { return score * maxCombo; }
+    public int getFinalScore() { return maxCombo == 0 ? score * combo : score * maxCombo; }
     public void resetPlayerCombo() { if (combo > maxCombo) maxCombo = combo; combo = 0; updateText(); }
 }

@@ -80,6 +80,7 @@ public class BeatController : MonoBehaviour
         Note note;
 
         ClearNullNotes();
+        GenerateDebugLine();
 
         if (beatmap.Count > 0) 
         {
@@ -91,24 +92,29 @@ public class BeatController : MonoBehaviour
                 note = GameObject.Instantiate(notePrefab).GetComponent<Note>();
                 note.SetPlayer(player);
                 note.SetController(this);
-                note.SetInitialState(start, end, (songPosition - (middle - Note.fallTime)));
+                note.SetInitialState(start, end, ((middle - Note.fallTime) - songPosition));
                 currentlyLiveNotes.Enqueue(note);
                 beatmap.Dequeue();
             }
         }
 
+        minigameController.SetGameScore((float)GameObject.Find("Player").GetComponent<Player>().getScore());
         if (songPosition >= endTime)
         {
-            minigameController.SetGameScore((float)GameObject.Find("Player").GetComponent<Player>().getScore());
+            minigameController.SetGameScore((float)GameObject.Find("Player").GetComponent<Player>().getFinalScore());
             minigameController.EndGame();
         }
-        GenerateDebugLine();
     }
 
+    /* Getters / Setters */
     public Queue<Note> getCurrentlyLiveNotes() { return currentlyLiveNotes; }
     public void DequeueFrontNote() { currentlyLiveNotes.Dequeue(); }
 
-    public void SetBeatmap()
+    /* Helpers */
+
+    // Creates the beat map
+    // Note that the times are given in beats
+    private void SetBeatmap()
     {
         beatmap.Clear(); 
         for (float i = 3; i < 31; i ++)
@@ -117,7 +123,9 @@ public class BeatController : MonoBehaviour
         }
     }
 
-    public void ClearNullNotes()
+    // A backup to ensure that the next note that is pulled is a non-null note, since notes can be destroyed.
+    // Theoretically, if notes are handled properly this should not be necessary.
+    private void ClearNullNotes()
     {
         Note note;
         while (currentlyLiveNotes.Count > 0)
@@ -134,21 +142,22 @@ public class BeatController : MonoBehaviour
         }
     }
 
-    public void GenerateDebugLine()
+    // Generates the debug lines at every beat
+    private void GenerateDebugLine()
     {
         if (songPosition >= debugClock * secondsPerBeat - Note.fallTime)
         {
             Note note = GameObject.Instantiate(notePrefab).GetComponent<Note>();
             note.transform.localScale = new Vector3(100f, .01f, 1);
-            note.SetLifetime(debugClock * secondsPerBeat - Note.fallTime); 
+            note.SetLifetime((debugClock * secondsPerBeat - Note.fallTime) - songPosition); 
             debugClock += 1;
         }
     }
     
+    /* Various setup to handle audio and music */
     private void HandleSceneReadied()
     {
         globalAudioMessenger.RaiseStopEvent(AudioCueKey.Invalid);
-
         StartCoroutine(PlayMusicWithOffset());
     }
 
@@ -156,5 +165,10 @@ public class BeatController : MonoBehaviour
     {
         yield return new WaitForSeconds(songStartOffsetInSeconds);
         globalAudioMessenger.RaisePlayEvent(audioCue, audioConfig, Vector3.zero);
+    }
+    
+    private void OnDestroy()
+    {
+        sceneReadyChannelSO.OnEventRaised -= HandleSceneReadied;
     }
 }
