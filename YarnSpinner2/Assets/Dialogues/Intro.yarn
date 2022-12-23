@@ -1,0 +1,90 @@
+﻿title: Intro
+tags:
+---
+// declare only sets the variable on the first run-through! (You can also declare variables in the Project file itself)
+<<declare $firstAsk to true>>
+<<fade true 0>>
+<<if $firstAsk>>
+    System: Are you ready to start?
+<<else>>
+    System: Are you ready now?
+<<endif>>
+-> Yes!
+    <<jump NewGame>>
+-> Nah
+    // set will set the variable on any run-through
+    <<set $firstAsk to false>>
+    <<jump Intro>>
+===
+title: NewGame
+tags:
+---
+<<playMusic Music/Gameplay>>
+<<fadeBackground Backgrounds/Dorm>>
+Player: Time to go to school!
+Player: I'm sure nothing weird or kooky will happen at the Bruin Walk.
+<<fadeBackground Backgrounds/Plaza/plaza_noon 2>>
+Player: So far so good - no Andre in sight.
+<<setSprite Middle Dwayne/Idle>>
+Dwayne: Hey kid. It's me: Dwayne "The Rock" Johnson!
+Player: Wha-
+Dwayne: Unfortunately, movies set in jungles have fallen out of fashion lately. So now I'm making ends meet as a fortune teller.
+Dwayne: Would you like me to guess your lucky number?
+-> Yes!
+    Dwayne: Great! Let's begin!
+    <<wait 2>>
+    Dwayne: Hmmm...
+    <<wait 3>>
+    <<setSprite Middle Dwayne/Eyebrow>>
+    <<playSound Middle SFX/VineBoom>>
+    <<declare $luckyNumber to 0>>
+    <<set $luckyNumber to dice(6)>>
+    Dwayne: Your lucky number is {$luckyNumber}!
+    <<setSprite Middle Dwayne/Idle>>
+    // Can you use an if statement to check if your luckyNumber matches Dwayne's? (his can be whatever)
+    //      Note: Don't forget to indent and add the endif at the end!
+    <<wait 1>>
+    <<setSprite Middle Dwayne/Eyebrow>>
+    <<playSound Middle SFX/VineBoom>>
+    Dwayne: Hey wait, that's my lucky number too...
+    Player: Uh oh, gotta go!
+    <<setSprite Middle Dwayne/Running>>
+    Dwayne: Get back here faker!!
+-> No thanks.
+    <<wait 1>>
+    <<setSprite Middle Dwayne/Eyebrow>>
+    <<playSound Middle SFX/VineBoom>>
+    <<wait 1>>
+    <<setSprite Middle Dwayne/Idle>>
+    <<wait 0.5>>
+    <<setSprite Middle Dwayne/Eyebrow>>
+    <<playSound Middle SFX/VineBoom>>
+    <<wait 0.25>>
+    <<setSprite Middle Dwayne/Idle>>
+    <<wait 0.25>>
+    <<setSprite Middle Dwayne/Eyebrow>>
+    <<playSound Middle SFX/VineBoom>>
+    <<wait 0.25>>
+    <<setSprite Middle Dwayne/Idle>>
+    <<wait 1>>
+    <<setSprite Middle Dwayne/Eyebrow>>
+    <<playSound Middle SFX/VineBoom>>
+    <<wait 0.1>>
+    <<setSprite Middle Dwayne/Idle>>
+    <<wait 0.1>>
+    <<setSprite Middle Dwayne/Eyebrow>>
+    <<playSound Middle SFX/VineBoom>>
+    <<wait 0.1>>
+    <<setSprite Middle Dwayne/Idle>>
+    <<wait 0.1>>
+    <<setSprite Middle Dwayne/Eyebrow>>
+    <<playSound Middle SFX/VineBoom>>
+    <<wait 1>>
+    // To keep the script short, can you make a new YarnCommand that does the next four lines?
+    <<fade false 1>>
+    <<fadeBackground Backgrounds/BlackScreen 0>>
+    <<clearSprite Middle 0>>
+    <<fade true 0>>
+    <<wait 0.5>>
+    System: YOU DIED
+===

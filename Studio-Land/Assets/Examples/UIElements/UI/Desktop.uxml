@@ -1,6 +1,0 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:Template name="Toolbar" src="project://database/Assets/Examples/UIElements/UI/Toolbar.uxml?fileID=9197481963319205126&amp;guid=df62041f77ce6494390eb223c9afbec3&amp;type=3#Toolbar" />
-    <ui:VisualElement name="Root" style="background-image: url(&apos;project://database/Assets/Examples/UIElements/Pictures/windows-10-background.jpg?fileID=2800000&amp;guid=68014cde55cae3d4d8bbcfafc1d3c60a&amp;type=3#windows-10-background&apos;); width: 100%; height: 100%;">
-        <ui:Instance template="Toolbar" name="Toolbar" style="margin-top: auto;" />
-    </ui:VisualElement>
-</ui:UXML>
