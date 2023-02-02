@@ -7,7 +7,7 @@ We also offer the [Intro Track](https://github.com/uclaacm/studio-intro-tutorial
 ## Curriculum Overview
 | Tutorials | Topics Covered | Live Schedule | Slides | Video | Location/Time |
 |-----------|----------------|---------------|--------|-------|----------|
-| [Week 4: Cyber x Studio: Game Hacking]() |<ul><li>???</li><li>???</li><li>???</li></ul>| February 2nd | [Slides]() | [Video]() | Kerckhoff 131 (8 - 10 PM)
+| [Week 4: Cyber x Studio: Game Hacking]() |<ul><li>Memory Scraping</li><li>DLL Injection</li><li>Unity Hacking</li></ul>| February 2nd | [Slides](https://docs.google.com/presentation/d/1pNOD-PyxS6_5ChXViIxzbl520rEjc7HFEHA1-BY1ubk/edit#slide=id.gbc2ca6aba9_1_0) | [Video]() | Kerckhoff 131 (8 - 10 PM)
 | [Week 5: AI x Studio: Reinforcement Learning in Games]() |<ul><li>???</li><li>???</li><li>???</li></ul>| February 8th | [Slides]() | [Video]() | Bunche 3178 (6 - 8 PM)
 | [Week 7: Yarn Spinner Dialogue Systems]() |<ul><li>???</li><li>???</li><li>???</li></ul>| February 21st | [Slides]() | [Video]() | Boelter 4760 (6 - 8 PM)
 | [Week 8: Screen Shake & Camera Control]() |<ul><li>???</li><li>???</li><li>???</li></ul>| March 1st | [Slides]() | [Video]() | Bunche 3178 (6 - 8 PM)
