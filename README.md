@@ -8,7 +8,7 @@ We also offer the [Intro Track](https://github.com/uclaacm/studio-intro-tutorial
 | Tutorials | Topics Covered | Live Schedule | Slides | Video | Location/Time |
 |-----------|----------------|---------------|--------|-------|----------|
 | [Week 4: Cyber x Studio: Game Hacking](https://github.com/uclaacm/studio-special-topics-tutorials/tree/winter-23/Cyber%20x%20Studio%20Collab) |<ul><li>Memory Scraping</li><li>DLL Injection</li><li>Unity Hacking</li></ul>| February 2nd | [Slides](https://docs.google.com/presentation/d/1pNOD-PyxS6_5ChXViIxzbl520rEjc7HFEHA1-BY1ubk/edit#slide=id.gbc2ca6aba9_1_0) | [Video]() | Kerckhoff 131 (8 - 10 PM)
-| [Week 6: AI x Studio: Reinforcement Learning in Games]() |<ul><li>???</li><li>???</li><li>???</li></ul>| February 18th | [Slides]() | [Video]() | ENG VI 289 (6 - 8 PM)
+| [Week 6: AI x Studio: Reinforcement Learning in Games]() |<ul><li>ML Agents</li><li>Hyperparameters</li><li>Reinforcement Learning...</li></ul>| February 18th | [Slides](https://docs.google.com/presentation/d/1t8JrdaRGhr6HASWs3ROli3mLfkFCqOUpffwA5KkQuEc/edit?usp=sharing) | [Video]() | ENG VI 289 (6 - 8 PM)
 | [Week 7: Yarn Spinner Dialogue Systems]() |<ul><li>???</li><li>???</li><li>???</li></ul>| February 21st | [Slides]() | [Video]() | Boelter 4760 (6 - 8 PM)
 | [Week 8: Screen Shake & Camera Control]() |<ul><li>???</li><li>???</li><li>???</li></ul>| March 1st | [Slides]() | [Video]() | Bunche 3178 (6 - 8 PM)
 
