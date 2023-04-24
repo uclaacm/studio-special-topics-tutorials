@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <ui:VisualElement>
+        <ui:Label text="Hello World from UI Builder!" display-tooltip-when-elided="true" />
+        <uie:PropertyField binding-path="maxHealth" />
+    </ui:VisualElement>
+</ui:UXML>
