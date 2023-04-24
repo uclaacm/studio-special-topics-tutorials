@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 220095cb9da5a084399a3ba9b437aca7, type: 3}
   m_Name: ExampleSingleton
   m_EditorClassIdentifier: 
-  Data: 857255930
+  Data: 264131113
