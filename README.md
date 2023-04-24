@@ -1,4 +1,4 @@
-# Studio Special Topics Tutorials - Fall 2022
+# Studio Special Topics Tutorials - Winter 2023
 ## Welcome to the Special Topics Track!
 In this weekly workshop series, you will be exposed to different type of games and systems in game development, from planetary gravity, to artificial intelligence! Our tutorials are made with beginners in mind, so don't worry if you haven't done anything in Unity before! Live workshops will take place at various locations this quarter (see below!). Unlike the Intro Track, most of these workshops are independent and do not build upon the previous workshop. But we still encourage you to attend as many as you can to maximize your learning!
 
@@ -10,7 +10,7 @@ We also offer the [Intro Track](https://github.com/uclaacm/studio-intro-tutorial
 | [Week 4: Cyber x Studio: Game Hacking](https://github.com/uclaacm/studio-special-topics-tutorials/tree/winter-23/Cyber%20x%20Studio%20Collab) |<ul><li>Memory Scraping</li><li>DLL Injection</li><li>Unity Hacking</li></ul>| February 2nd | [Slides](https://docs.google.com/presentation/d/1pNOD-PyxS6_5ChXViIxzbl520rEjc7HFEHA1-BY1ubk/edit#slide=id.gbc2ca6aba9_1_0) | [Video]() | Kerckhoff 131 (8 - 10 PM)
 | [Week 6: AI x Studio: Reinforcement Learning in Games]() |<ul><li>ML Agents</li><li>Hyperparameters</li><li>Reinforcement Learning...</li></ul>| February 18th | [Slides](https://docs.google.com/presentation/d/1t8JrdaRGhr6HASWs3ROli3mLfkFCqOUpffwA5KkQuEc/edit?usp=sharing) | [Video]() | ENG VI 289 (6 - 8 PM)
 | [Week 7: Yarn Spinner Dialogue Systems]() |<ul><li>Yarn Spinner :)</li><li>.yarn files</li><li>commands/functions!</li></ul>| February 21st | [Slides](https://docs.google.com/presentation/d/1YlPojUeKBXdHJ9gP2q_pyFrt66J753Dh/edit?usp=sharing&ouid=111675105352016817985&rtpof=true&sd=true) | [Video](https://drive.google.com/file/d/1ubuZEPZoyerWSsd5KotbWXb4s-AnZMEt/view?usp=share_link) | Boelter 4760 (6 - 8 PM)
-| [Week 8: Screen Shake & Camera Control]() |<ul><li>???</li><li>???</li><li>???</li></ul>| March 1st | [Slides]() | [Video]() | Bunche 3178 (6 - 8 PM)
+| [Week 8: Screen Shake & Camera Control]() |<ul><li>Random movement</li><li>Stabilization</li><li>Camera basics</li></ul>| March 1st | [Slides]() | [Video]() | Bunche 3178 (6 - 8 PM)
 
 
 
