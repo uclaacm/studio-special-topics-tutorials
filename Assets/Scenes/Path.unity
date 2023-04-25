@@ -497,64 +497,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 841557939}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b9c0c6781a692148b304bf75b3a4b05, type: 3}
+  m_Script: {fileID: 11500000, guid: d6349f0186fd87b4f8c692665fc3c94b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minNodePosition: {x: -3.8004994, y: -3.580636}
-  maxNodePosition: {x: 3.7376812, y: 3.2979543}
+  minNodePosition: {x: 0, y: 0}
+  maxNodePosition: {x: 0, y: 0}
   wallLayerMask:
     serializedVersion: 2
-    m_Bits: 128
-  traversableNodes:
-  - {x: -3, y: -3}
-  - {x: -3, y: -2}
-  - {x: -3, y: -1}
-  - {x: -3, y: 0}
-  - {x: -3, y: 1}
-  - {x: -3, y: 2}
-  - {x: -3, y: 3}
-  - {x: -2, y: -3}
-  - {x: -2, y: -2}
-  - {x: -2, y: -1}
-  - {x: -2, y: 0}
-  - {x: -2, y: 1}
-  - {x: -2, y: 2}
-  - {x: -2, y: 3}
-  - {x: -1, y: -3}
-  - {x: -1, y: -2}
-  - {x: -1, y: -1}
-  - {x: -1, y: 0}
-  - {x: -1, y: 1}
-  - {x: -1, y: 2}
-  - {x: -1, y: 3}
-  - {x: 0, y: -3}
-  - {x: 0, y: -2}
-  - {x: 0, y: -1}
-  - {x: 0, y: 0}
-  - {x: 0, y: 1}
-  - {x: 0, y: 2}
-  - {x: 0, y: 3}
-  - {x: 1, y: -3}
-  - {x: 1, y: -2}
-  - {x: 1, y: -1}
-  - {x: 1, y: 0}
-  - {x: 1, y: 1}
-  - {x: 1, y: 2}
-  - {x: 1, y: 3}
-  - {x: 2, y: -3}
-  - {x: 2, y: -2}
-  - {x: 2, y: -1}
-  - {x: 2, y: 0}
-  - {x: 2, y: 1}
-  - {x: 2, y: 2}
-  - {x: 2, y: 3}
-  - {x: 3, y: -3}
-  - {x: 3, y: -2}
-  - {x: 3, y: -1}
-  - {x: 3, y: 0}
-  - {x: 3, y: 1}
-  - {x: 3, y: 2}
-  - {x: 3, y: 3}
+    m_Bits: 0
+  traversableNodes: []
 --- !u!1 &892402944
 GameObject:
   m_ObjectHideFlags: 0
@@ -664,7 +615,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 921559053}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -2, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -907,7 +858,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1664508664}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1, y: 0, z: 1}
+  m_LocalPosition: {x: -3, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
