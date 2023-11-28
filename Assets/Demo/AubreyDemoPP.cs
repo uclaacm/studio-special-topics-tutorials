@@ -8,18 +8,13 @@ using UnityEngine.Rendering.PostProcessing;
 [PostProcess(typeof(AubreyDemoPPRenderer), PostProcessEvent.AfterStack, "Aubrey/DemoPP")]
 public class AubreyDemoPP : PostProcessEffectSettings
 {
-    [Range(1, 100)]
-    public IntParameter PixelSize = new IntParameter { value = 10 };
 }
 
 public sealed class AubreyDemoPPRenderer : PostProcessEffectRenderer<AubreyDemoPP>
 {
     public override void Render(PostProcessRenderContext context)
     {
-        var sheet = context.propertySheets.Get(Shader.Find("Aubrey/DemoPP"));
-
-        sheet.properties.SetFloat("_PixelSize", settings.PixelSize);
-        
+        var sheet = context.propertySheets.Get(Shader.Find("Aubrey/DemoPP"));        
         context.command.BlitFullscreenTriangle(context.source, context.destination, sheet, 0);
     }
 }
