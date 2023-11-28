@@ -1,10 +1,9 @@
-Shader "Aubrey/AubreyUnlit"
+Shader "Aubrey/AubreyDiffuse"
 {
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
         _Ambient ("Ambient", Float) = 0.2
-        _NCels ("Ambient", Integer) = 3
     }
     SubShader
     {
@@ -33,8 +32,7 @@ Shader "Aubrey/AubreyUnlit"
                 float2 uv : TEXCOORD0;
             };
 
-            sampler2D _MainTex;
-            float4 _MainTex_ST;
+            UNITY_DECLARE_TEX2D(_MainTex);
 
             float _Ambient;
             int _NCels;
@@ -44,15 +42,14 @@ Shader "Aubrey/AubreyUnlit"
                 v2f o;
                 o.vertex = UnityObjectToClipPos(v.vertex);
                 o.normal = float4(UnityObjectToWorldDir(v.normal.xyz), v.normal.w);
-                o.uv = TRANSFORM_TEX(v.uv, _MainTex);
+                o.uv = v.uv;
                 return o;
             }
 
             fixed4 frag (v2f i) : SV_Target
             {
-                fixed4 col = tex2D(_MainTex, i.uv);
+                fixed4 col = UNITY_SAMPLE_TEX2D(_MainTex, i.uv);
                 float intensity = dot(_WorldSpaceLightPos0, i.normal) * (1.0f - _Ambient) + _Ambient;
-                intensity = ceil(intensity * _NCels) / _NCels;
                 col *= intensity;
                 return col;
             }
